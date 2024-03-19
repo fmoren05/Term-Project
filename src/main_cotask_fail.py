@@ -1,6 +1,6 @@
-"""
+"""!
 This script implements tasks for initializing hardware components, finding hotspots using a camera, and controlling a motor using PID control.
-!"""
+"""
 
 import gc  # Importing garbage collector for memory management
 import pyb  # Importing pyb for board-specific functionality
