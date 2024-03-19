@@ -1,4 +1,4 @@
-"""
+"""!
 Struct and Field Description Utilities
 
 This script provides utilities for working with structured data and defining field descriptions. It includes functions for creating arrays filled with a specified value, calculating two's complement, and creating field descriptions.
@@ -19,7 +19,7 @@ Dr. Ridgely
 
 Modifed by: Conor Schott, Fermin Moreno, Berent Baysal
 
-!"""
+"""
 
 from array import array
 from ucollections import namedtuple
@@ -35,7 +35,7 @@ from uctypes import (
 )
 
 def array_filled(typecode, length, fill=0):
-    """
+    """!
     Create an array filled with a specified value.
 
     Args:
@@ -45,11 +45,11 @@ def array_filled(typecode, length, fill=0):
 
     Returns:
         array: Filled array.
-    !"""
+    """
     return array(typecode, (fill for i in range(length)))
 
 def twos_complement(bits, value):
-    """
+    """!
     Calculate the two's complement of a value given its bit size.
 
     Args:
@@ -58,7 +58,7 @@ def twos_complement(bits, value):
 
     Returns:
         int: Two's complement of the value.
-    !"""
+    """
     if value < 0:
         return value + (1 << bits)
     if value >= (1 << (bits - 1)):
@@ -70,7 +70,7 @@ FD_WORD = object()
 
 FieldDesc = namedtuple('FieldDesc', ('name', 'layout', 'signed_bits'))
 def field_desc(name, bits, pos=0, signed=False):
-    """
+    """!
     Create a field description namedtuple.
 
     Args:
@@ -81,7 +81,7 @@ def field_desc(name, bits, pos=0, signed=False):
 
     Returns:
         FieldDesc: Namedtuple describing the field.
-    !"""
+    """
     if bits is FD_WORD:
         layout = 0 | (INT16 if signed else UINT16)
         return FieldDesc(name, layout, None)
@@ -96,12 +96,12 @@ def field_desc(name, bits, pos=0, signed=False):
 
 class StructProto:
     def __init__(self, fields):
-        """
+        """!
         Initialize the StructProto object.
 
         Args:
             fields (list of FieldDesc): List of field descriptions.
-        !"""
+        """
         self.layout = {}
         self.signed = {}
         for fld in fields:
@@ -111,18 +111,18 @@ class StructProto:
 
 class Struct:
     def __init__(self, buf, proto):
-        """
+        """!
         Initialize the Struct object.
 
         Args:
             buf (bytearray): Buffer containing the structured data.
             proto (StructProto): StructProto object defining the layout of the structured data.
-        !"""
+        """
         self._signed = proto.signed
         self._struct = uc_struct(addressof(buf), proto.layout, BIG_ENDIAN)
 
     def __getitem__(self, name):
-        """
+        """!
         Get the value of a field by name.
 
         Args:
@@ -130,7 +130,7 @@ class Struct:
 
         Returns:
             int: Value of the field.
-        !"""
+        """
         value = getattr(self._struct, name)
         signed = self._signed.get(name)
         if signed is not None:
@@ -138,7 +138,7 @@ class Struct:
         return value
 
     def __setitem__(self, name, value):
-        """
+        """!
         Set the value of a field by name.
 
         Args:
@@ -147,7 +147,7 @@ class Struct:
 
         Returns:
             None
-        !"""
+        """
         signed = self._signed.get(name)
         if signed is not None:
             value = twos_complement(signed, value)
