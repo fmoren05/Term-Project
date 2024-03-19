@@ -1,4 +1,4 @@
-"""
+"""!
 @brief Implements a ClosedLoopController class for controlling a system using closed-loop feedback.
 
 @details
@@ -19,7 +19,7 @@ Dependencies:
 - pyb
 - encoder_reader
 - motor_control
-!"""
+"""
 
 import utime
 import pyb
@@ -27,18 +27,18 @@ import encoder_reader
 import motor_control
 
 class ClosedLoopController:
-    """
+    """!
     Implements a ClosedLoopController class for controlling a system using closed-loop feedback.
-    !"""
+    """
 
     def __init__(self, Kp, Ki, Kd, setpoint):
-        """
+        """!
         Initializes the ClosedLoopController object with the provided parameters.
         @param Kp: Proportional gain constant
         @param Ki: Integral gain constant
         @param Kd: Derivative gain constant
         @param setpoint: Desired setpoint for the system
-        !"""
+        """
         self.Kp = Kp
         self.Ki = Ki
         self.Kd = Kd
@@ -54,11 +54,11 @@ class ClosedLoopController:
         self.delta_time = 0
         
     def run(self, measured_output):
-        """
+        """!
         Runs the closed-loop control algorithm to calculate the actuation signal.
         @param measured_output: Measured output from the system
         @return: Actuation signal calculated by the controller
-        !"""
+        """
         if self.start_time is None:
             self.start_time = utime.ticks_ms()
             
@@ -84,33 +84,33 @@ class ClosedLoopController:
         return actuation_signal
 
     def set_setpoint(self, setpoint):
-        """
+        """!
         Sets the desired setpoint for the system.
         @param setpoint: Desired setpoint for the system
-        !"""
+        """
         self.setpoint = setpoint
         self.integral = 0
         self.prev_error = 0
 
     def set_Kp(self, Kp):
-        """
+        """!
         Sets the proportional gain constant (Kp).
         @param Kp: Proportional gain constant
-        !"""
+        """
         self.Kp = Kp
 
     def set_Ki(self, Ki):
-        """
+        """!
         Sets the integral gain constant (Ki).
         @param Ki: Integral gain constant
-        !"""
+        """
         self.Ki = Ki
 
     def set_Kd(self, Kd):
-        """
+        """!
         Sets the derivative gain constant (Kd).
         @param Kd: Derivative gain constant
-        !"""
+        """
         self.Kd = Kd
 
 if __name__ == '__main__':
