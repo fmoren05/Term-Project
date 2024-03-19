@@ -1,106 +1,114 @@
-"""
-This script demonstrates cooperative multitasking using Cotask on a microcontroller. 
-Tasks 1 and 2 perform closed-loop control of motors based on encoder feedback. 
-The script also utilizes shared variables and a queue for inter-task communication.
+import utime
+import pyb
+import encoder_reader
+import motor_control
+import PID_Closed_Loop
+import image_to_encoder
+from machine import Pin, I2C
+from mlx90640 import MLX90640
+from mlx90640.calibration import NUM_ROWS, NUM_COLS, TEMP_K
+from mlx90640.image import ChessPattern, InterleavedPattern
+import servo_trigger
+import Flywheel
 
-Authors: Conor Schott, Fermin Moreno, Berent Baysal
-"""
 
-import gc  # Importing garbage collector for memory management
-import utime  # Importing utime for microsecond-level timing
-import pyb  # Importing pyb for board-specific functionality
-import cotask  # Importing cotask for cooperative multitasking
-import task_share  # Importing task_share for shared variables among tasks
-import encoder_reader  # Importing custom module for reading encoder values
-import motor_control  # Importing custom module for motor control
-import closed_loop  # Importing custom module for closed-loop control
 
-#---------------------------------------------------------------------------------
 
-def task1_fun():
-    """!
-    Task function for Task 1.
-    Implements closed-loop control of a motor based on encoder feedback.
-    """
-    encoder1 = encoder_reader.Encoder(8, pyb.Pin.board.PC6, pyb.Pin.board.PC7)  # Encoder for Task 1
-    motor1 = motor_control.MotorDriver(pyb.Pin.board.PC1, pyb.Pin.board.PA0, pyb.Pin.board.PA1, 5)  # Motor driver for Task 1
-    close1 = closed_loop.ClosedLoopController(0.03, 50000)  # Closed-loop controller for Task 1
-    encoder1.zero()  # Zeroing the encoder
+# ENCODER AND MOTOR SETUP----------------------------------------------------------
+enc = encoder_reader.Encoder(8, pyb.Pin.board.PC6, pyb.Pin.board.PC7)
+moe = motor_control.MotorDriver(pyb.Pin.board.PC1, pyb.Pin.board.PA0, pyb.Pin.board.PA1, 5)
+servo1 = servo_trigger.ServoDriver('PB6',4,1)
 
-    graph_printed = False  # Flag to indicate whether graph has been printed for current trial
+# CAMERA SETUP---------------------------------------------------------------------
 
-    while True:
-        iterations1 = 0
-        while iterations1 <= 150:
-            current_position1 = encoder1.read()  # Reading current encoder position
-            output1 = close1.run(current_position1)  # Running closed-loop control
-            motor1.set_duty_cycle(output1)  # Setting motor duty cycle
-            iterations1 += 1
-            yield 0
+try:
+    from pyb import info
+except ImportError:
+    i2c_bus = I2C(1, scl=Pin(22), sda=Pin(21))
+else:
+    i2c_bus = I2C(1)
 
-        if not graph_printed:
-            close1.print_results()  # Printing results if graph hasn't been printed yet
-            graph_printed = True  # Set flag to True after printing graph once
+i2c_address = 0x33
+scanhex = [f"0x{addr:X}" for addr in i2c_bus.scan()]
+cam = image_to_encoder.MLX_Cam(i2c_bus)
+#Actual important stuff is below this line-----------------------------------------
 
-        motor1.set_duty_cycle(0)  # Stopping the motor
 
-# Function for Task 2 with similar functionality as Task 1
-def task2_fun():
-    """!
-    Task function for Task 2.
-    Implements closed-loop control of another motor based on encoder feedback.
-    """
-    encoder2 = encoder_reader.Encoder(4, pyb.Pin.board.PB6, pyb.Pin.board.PB7)  # Encoder for Task 2
-    motor2 = motor_control.MotorDriver(pyb.Pin.board.PA10, pyb.Pin.board.PB4, pyb.Pin.board.PB5, 3)  # Motor driver for Task 2
-    close2 = closed_loop.ClosedLoopController(0.03, 50000)  # Closed-loop controller for Task 2
-    encoder2.zero()  # Zeroing the encoder
+Flywheel.start_flywheel()
+utime.sleep_ms(2000)
+enc.zero()
+while True:
+    try:       
+        
+        Kp = 0.17
+        Ki = 0.01
+        Kd = 0
+        iterations = 0
+        #finding the hotspot with the use of image_to_encoder---------
+        while iterations < 1:
+            image = cam.get_image()
+            #cam.ascii_art(image)
+            hot_spot = cam.find_hotSpot(image)
+            #utime.sleep_ms(1) ########
+            iterations+=1
+        
+        #Flywheel.run_flywheel()
+        setpoint = cam.hotspot_to_encoder_position(hot_spot[0], 32)
+        #setpoint = -25652
+        print(setpoint)
+        
+        #------------------------------------------------------
 
-    graph_printed = False  # Flag to indicate whether graph has been printed for current trial
 
-    while True:
-        iterations2 = 0
-        while iterations2 <= 150:
-            current_position2 = encoder2.read()
-            output2 = close2.run(current_position2)
-            motor2.set_duty_cycle(output2)
-            iterations2 += 1
-            yield 0
-
-        if not graph_printed:
-            close2.print_results()
-            graph_printed = True  # Set flag to True after printing graph once
-
-        motor2.set_duty_cycle(0)
-
-#----------------------------------------------------------------------------------
-
-if __name__ == "__main__":
-    print("Testing ME405 stuff in cotask.py and task_share.py\r\n"
-          "Press Ctrl-C to stop and show diagnostics.")
-    
-    # Creating shared variables and queue
-    share0 = task_share.Share('h', thread_protect=False, name="Share 0")
-    q0 = task_share.Queue('L', 16, thread_protect=False, overwrite=False, name="Queue 0")
-
-    # Creating tasks and adding them to task list
-    task1 = cotask.Task(task1_fun, name="Task_1", priority=1, period=45,
-                        profile=True, trace=False)
-    task2 = cotask.Task(task2_fun, name="Task_2", priority=1, period=45,
-                        profile=True, trace=False)
-    cotask.task_list.append(task1)
-    cotask.task_list.append(task2)
-
-    gc.collect()  # Running garbage collection for memory management
-
-    while True:
-        try:
-            cotask.task_list.pri_sched()  # Priority scheduling for tasks
-        except KeyboardInterrupt:
-            break
-
-    # Printing diagnostics after interruption
-    print('\n' + str(cotask.task_list))
-    print(task_share.show_all())
-    print(task1.get_trace())
-    print('')
-
+        print("Hottest spot coordinates:", hot_spot)
+        encoder_position = cam.hotspot_to_encoder(hot_spot[0])
+        print("Encoder Position:", encoder_position)  
+        
+        
+        close = PID_Closed_Loop.ClosedLoopController(Kp, Ki, Kd, setpoint)
+        iterations = 0
+        
+        
+        #Step response-----------------------------------------
+        
+        while enc.read()+5 < setpoint or enc.read()-5 > setpoint:
+            current_position = enc.read()
+            output = close.run(current_position)
+            moe.set_duty_cycle(output)
+            #print(current_position)
+            utime.sleep_ms(10)
+            
+        moe.set_duty_cycle(0)
+        servo1.set_pos(250)
+        utime.sleep_ms(3000)
+        Flywheel.stop_flywheel()
+        servo1.set_pos(0)
+        utime.sleep_ms(1000)
+        
+        #moe.set_duty_cycle(0)
+        #utime.sleep_ms(2000)
+       
+        Kp = 0.17
+        Ki = 0.1
+        Kd = 0
+        setpoint = 0
+        close = PID_Closed_Loop.ClosedLoopController(Kp, Ki, Kd, setpoint)
+        
+        while enc.read()+3 < setpoint or enc.read()-3 > setpoint:
+            current_position = enc.read()
+            output = close.run(current_position)
+            moe.set_duty_cycle(output)
+            #print(current_position)
+            utime.sleep_ms(10)   
+        moe.set_duty_cycle(0)
+        break
+        
+#EXCEPT BLOCKS--------------------------------------------------------    
+        
+    except ValueError as e:
+        print('ValueError:', e)
+        
+    except Exception as e:
+        print('Exception:', str(e))  # Convert integer 'e' to string explicitly
+        # Additional exception handling or logging can be added here
+       

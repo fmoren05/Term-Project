@@ -1,15 +1,18 @@
 """
-Script Name: closed_loop.py
-Description: This script defines a ClosedLoopController class for implementing a closed-loop proportional controller for DC motors.
-Author: Conor Schott, Fermin Moreno, Berent Baysal
-Date: 2/22/24
+@brief Implements a closed-loop controller for motor control.
 
-Dependencies:
-- utime
-- pyb
-- encoder_reader
-- motor_control
-"""
+@details
+This module contains the implementation of a closed-loop controller for motor control. It includes functions for setting the setpoint, adjusting the proportional and integral gains, and running the control loop.
+
+@author
+Author: Conor Schott, Fermin Moreno, Berent Baysal
+
+@date
+Date: 3/14/2024
+
+@version
+Version: [Version Number]
+!"""
 
 import utime
 import pyb
@@ -17,40 +20,48 @@ import encoder_reader
 import motor_control
 
 class ClosedLoopController:
-    """! Represents a closed-loop proportional controller for DC motors."""
-    
-    def __init__(self, Kp, setpoint):
-        """! Initializes the ClosedLoopController object.
-        
-        Args:
-            Kp (float): The proportional gain of the controller.
-            setpoint (int): The initial setpoint for the motor position.
+    """
+    Class representing a closed-loop controller for motor control.
+    !"""
+
+    def __init__(self, Kp, Ki, setpoint):
         """
+        Initialize the closed-loop controller.
+
+        @param Kp: The proportional gain.
+        @type Kp: float
+        @param Ki: The integral gain.
+        @type Ki: float
+        @param setpoint: The desired setpoint.
+        @type setpoint: float
+        !"""
         self.Kp = Kp
+        self.Ki = Ki
         self.setpoint = setpoint
         self.measured_output = 0
+        self.integral = 0
         self.time_buffer = []
         self.position_buffer = []
         self.start_time = None
         
     def run(self, measured_output):
-        """! Runs the closed-loop control algorithm.
-        
-        Args:
-            measured_output (int): The current measured position of the motor.
-        
-        Returns:
-            float: The actuation value for the motor.
         """
+        Run the control loop.
+
+        @param measured_output: The measured output.
+        @type measured_output: float
+        @return: The actuation signal.
+        @rtype: float
+        !"""
         if self.start_time is None:
             self.start_time = utime.ticks_ms()
 
         self.measured_output = measured_output
         error = self.setpoint - self.measured_output
-        actuation_signal = self.Kp * error
+        self.integral += error
+        actuation_signal = self.Kp * error + self.Ki * self.integral
 
         if len(self.time_buffer) < 200:
-            # Append time increments of 10 milliseconds
             current_time = (utime.ticks_ms() - self.start_time) // 10
             self.time_buffer.append(current_time)
             self.position_buffer.append(self.measured_output)
@@ -58,47 +69,46 @@ class ClosedLoopController:
         return actuation_signal
 
     def set_setpoint(self, setpoint):
-        """! Sets a new setpoint for the controller.
-        
-        Args:
-            setpoint (int): The new desired position for the motor.
         """
+        Set the setpoint.
+
+        @param setpoint: The desired setpoint.
+        @type setpoint: float
+        !"""
         self.setpoint = setpoint
+        self.integral = 0  # Reset the integral term when the setpoint changes
 
     def set_Kp(self, Kp):
-        """! Sets a new proportional gain for the controller.
-        
-        Args:
-            Kp (float): The new proportional gain value.
-        """     
-        self.Kp = Kp
-        
-    def print_results(self):
-        """Prints the time and position buffers."""
-        for time, position in zip(self.time_buffer, self.position_buffer):
-            print(time, position, sep=", ")
-        
-        
-    
-if __name__ == '__main__':
-    """! Entry point of the script."""
-    
-    enc = encoder_reader.Encoder(8, pyb.Pin.board.PC6, pyb.Pin.board.PC7)  
-    moe = motor_control.MotorDriver(pyb.Pin.board.PC1, pyb.Pin.board.PA0, pyb.Pin.board.PA1, 5)
-    
-    # Initialize closed-loop control object
-    close = ClosedLoopController(0, 0.1)
+        """
+        Set the proportional gain.
 
-    # Set target setpoint and proportional gain (Kp)
+        @param Kp: The proportional gain.
+        @type Kp: float
+        !"""
+        self.Kp = Kp
+
+    def set_Ki(self, Ki):
+        """
+        Set the integral gain.
+
+        @param Ki: The integral gain.
+        @type Ki: float
+        !"""
+        self.Ki = Ki
+        
+if __name__ == '__main__':
+    enc = encoder_reader.Encoder(8, pyb.Pin.board.PC6, pyb.Pin.board.PC7)
+    moe = motor_control.MotorDriver(pyb.Pin.board.PC1, pyb.Pin.board.PA0, pyb.Pin.board.PA1, 5)
+
+    close = ClosedLoopController(Kp=.00003, Ki=0.0003, setpoint=0)
+
     target_setpoint = 50000
     close.set_setpoint(target_setpoint)
-    Kp = 0.01
-    close.set_Kp(Kp)
-    
+
     # Main control loop
     while True:
         current_position = enc.read()
         output = close.run(current_position)
         moe.set_duty_cycle(output)
-        utime.sleep_ms(10)  # Sleep for 10 milliseconds
-
+        print(current_position)
+        utime.sleep_ms(10)

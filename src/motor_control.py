@@ -1,29 +1,40 @@
 """
-Script Name: motor_control.py
-Description: This script defines a MotorDriver class for controlling motors in an ME405 kit.
-Author: Conor Schott, Fermin Moreno, Berent Baysal
+@file motor_control.py
+@brief Defines a MotorDriver class for controlling motors in an ME405 kit.
+
+@details
+This script defines a MotorDriver class, which allows controlling motors by initializing GPIO
+pins and setting the duty cycle to control torque. 
+
+@note
+This class assumes that the motor driver is used in an ME405 kit.
+
+@author
+Authors: Conor Schott, Fermin Moreno, Berent Baysal
+
+@date
 Date: 2/22/24
 
+@dependencies
 Dependencies:
 - pyb
-"""
+!"""
 
 from pyb import *
 
 class MotorDriver:
-    """!
-    This class implements a motor driver for an ME405 kit.
     """
+    This class implements a motor driver for an ME405 kit.
+    !"""
 
     def __init__ (self, en_pin, in1pin, in2pin, timer):
-        """!
-        Creates a motor driver by initializing GPIO
-        pins and turning off the motor for safety.
+        """
+        Creates a motor driver by initializing GPIO pins and turning off the motor for safety.
         @param en_pin: Pin for motor enable
         @param in1pin: Pin for IN1
         @param in2pin: Pin for IN2
         @param timer: Timer for PWM
-        """
+        !"""
         self.en_pin = Pin(en_pin, Pin.OUT_OD, Pin.PULL_UP)
         self.in1 = Pin(in1pin, Pin.OUT_PP)
         self.in2 = Pin(in2pin, Pin.OUT_PP)
@@ -35,14 +46,11 @@ class MotorDriver:
         #print("Creating a motor driver")
 
     def set_duty_cycle (self, level):
-        """!
-        This method sets the duty cycle to be sent
-        to the motor to the given level. Positive values
-        cause torque in one direction, negative values
-        in the opposite direction.
-        @param level: A signed integer holding the duty
-               cycle of the voltage sent to the motor
         """
+        Sets the duty cycle to be sent to the motor to the given level.
+        Positive values cause torque in one direction, negative values in the opposite direction.
+        @param level: A signed integer holding the duty cycle of the voltage sent to the motor
+        !"""
         
         
         if level < 0:
@@ -61,10 +69,10 @@ if __name__ == '__main__':
 
     moe = MotorDriver(Pin.board.PC1, Pin.board.PA0, Pin.board.PA1, 5)
     # Test with various duty cycles
-    moe.set_duty_cycle(42)  # Forward at 50% duty cycle
+    moe.set_duty_cycle(80)  # Forward at 50% duty cycle
     delay(5000)
    
-    moe.set_duty_cycle(-42)  # Reverse at 50% duty cycle
+    moe.set_duty_cycle(-80)  # Reverse at 50% duty cycle
     delay(5000)
 
     moe.set_duty_cycle(0)  # Stop the motor
