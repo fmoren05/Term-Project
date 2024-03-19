@@ -2,18 +2,23 @@
 This script implements tasks for initializing hardware components, finding hotspots using a camera, and controlling a motor using PID control.
 !"""
 
-import utime
-import pyb
-import cotask
-import encoder_reader
+import gc  # Importing garbage collector for memory management
+import pyb  # Importing pyb for board-specific functionality
+import utime  # Importing utime for microsecond-level timing
+import cotask  # Importing cotask for cooperative multitasking
+import task_share
 import motor_control
+import encoder_reader
 import PID_Closed_Loop
 import image_to_encoder
-from machine import Pin, I2C
 import servo_trigger
 import Flywheel
+from machine import Pin, I2C
+from mlx90640 import MLX90640
+from mlx90640.calibration import NUM_ROWS, NUM_COLS, TEMP_K
+from mlx90640.image import ChessPattern, InterleavedPattern
 
-# Task function for initializing hardware
+
 def task_init():
     """
     Task to initialize hardware components such as encoder, motor, servo, and camera.
