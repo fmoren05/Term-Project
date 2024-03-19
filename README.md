@@ -33,6 +33,8 @@ Figure 1: General CAD overview of system. Note that there is a horizontal pannin
 
 Figure 2: Firing sequence schematic of system. Note that the servo trigger will push the nerf bullet into the flywheels.
 
+
+
 # Software Design:
 
 
