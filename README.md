@@ -2,12 +2,16 @@
 
 # Introduction: 
 
-Goal: The final turret design will be used to compete in 1v1 battles (called dueling) with other groups to determine who can hit their target first over the span of 5 rounds. 
+## Goal: 
 
-Customer: ME 405 Instructor (Dr. Ridgely)
+The final turret design will be used to compete in 1v1 battles (called dueling) with other groups to determine who can hit their target first over the span of 5 rounds. 
+
+## Customer: 
+
+ME 405 Instructor (Dr. Ridgely)
 
 
-Brief Overview: 
+## Brief Overview: 
 
 Our turret design for the ME 405 term project features a dynamic combination of a lazy susan mechanism for horizontal panning and an adjustable firing angle mechanism, complemented by integrated flywheels to assist in launching projectiles. This setup enables autonomous target acquisition, aiming, and firing control on a Nerf™ or similar projectile launcher within the specified dimensional constraints. With safety considerations and adherence to project guidelines in mind, our turret system aims to achieve precise and efficient performance in dueling scenarios. 
 
@@ -16,7 +20,7 @@ Our turret design for the ME 405 term project features a dynamic combination of 
 NOTE: All CAD is in this folder: https://github.com/fmoren05/Term-Project/tree/main/cad
 
 
-KEY COMPONENTS
+## KEY COMPONENTS
 
 Microcontroller: STM32L476RG Nucelo (From Lab, Quantity: 1)
 
