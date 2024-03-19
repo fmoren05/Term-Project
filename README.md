@@ -69,7 +69,8 @@ Figure 5: 12V to 6V voltage regulator used for servo trigger motor.
 # State Diagrams of System
 
 
-![Firing_Secuence_State_Diagram](https://github.com/fmoren05/Term-Project/assets/156385950/4800061b-cff4-411c-ad2c-d1b4355806a7)
+![Firing_Secuence_State_Diagram](https://github.com/fmoren05/Term-Project/assets/156385950/790e4b55-d850-4f88-a7ff-82202f48e91a)
+
 
 Figure 6: Firing sequence state diagram.
 
