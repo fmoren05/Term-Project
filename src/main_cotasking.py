@@ -1,11 +1,15 @@
-"""
+"""!
 @brief This script demonstrates cooperative multitasking using Cotask on a microcontroller.
-Tasks 1 and 2 perform closed-loop control of motors based on encoder feedback.
-The script also utilizes shared variables and a queue for inter-task communication.
+Task 1 performs closed-loop control of the panning axis brushed DC motor based on camera feedback.
+The camera outputs a hotspot coordinate which is then translated to encoder counts and used as the setpoint 
+for our PID controller. Upon reaching the desired setpoint, the task then calls for the servo motor trigger to activate,
+placing a Nerf bullet into the path of the flywheels. 
+
+Task 2 controls the low-side MOSFET switch that is responsible for sending current to our flywheel motors.
 
 @file main.py
 @author Conor Schott, Fermin Moreno, Berent Baysal
-!"""
+"""
 
 import gc  # Importing garbage collector for memory management
 import pyb  # Importing pyb for board-specific functionality
@@ -25,10 +29,10 @@ from mlx90640.image import ChessPattern, InterleavedPattern
 #---------------------------------------------------------------------------------
 
 def firing_sequence_fun():
-    """
+    """!
     Task function for Firing Sequence.
-    Implements closed-loop control of a motor based on encoder feedback.
-    !"""
+    Implements closed-loop control of a motor based on camera feedback.
+    """
     # ENCODER AND MOTOR SETUP----------------------------------------------------------
     enc = encoder_reader.Encoder(8, pyb.Pin.board.PC6, pyb.Pin.board.PC7)
     moe = motor_control.MotorDriver(pyb.Pin.board.PC1, pyb.Pin.board.PA0, pyb.Pin.board.PA1, 5)
@@ -121,10 +125,10 @@ def firing_sequence_fun():
 
 # Function for Flywheel Motors with similar functionality as Firing Sequence
 def flywheel_motors_fun():
-    """
+    """!
     Task function for Flywheel Motors.
-    Implements closed-loop control of another motor based on encoder feedback.
-    !"""
+    Activates the low- side MOSFET switch for a set time limit.
+    """
     pinC0 = pyb.Pin(pyb.Pin.board.Pc0, pyb.Pin.OUT_PP)
 
     while True:
