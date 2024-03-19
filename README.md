@@ -47,7 +47,12 @@ Figure 1: General CAD overview of system. Note that there is a horizontal pannin
 Figure 2: Firing sequence schematic of system. Note that the servo trigger will push the nerf bullet into the flywheels.
 
 # Software Design:
-![image](https://github.com/fmoren05/Term-Project/assets/156385954/47345f5e-ff6a-48bf-90e8-84db1d92e567)
+
+![image](https://github.com/fmoren05/Term-Project/assets/156385954/c50f1105-7ef4-47a1-808b-d7fd96c1f143)
+
+Figure 3: Overall Circuit Diagram of System
+
+![image](https://github.com/fmoren05/Term-Project/assets/156385954/2e7ecd68-8abd-45ad-a0a7-47c0372085f3)
 
 
 Figure 3: Low-side mosfet switch used for flywheel motors. 
