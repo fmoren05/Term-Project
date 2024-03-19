@@ -28,22 +28,21 @@ MLX Thermal Camera: (Used To Find Target, Quantity: 1)
 
 ![image](https://github.com/fmoren05/Term-Project/assets/132640536/ce465a27-afd6-463f-9f4d-bb921be6ea81)
 
-
-
 Figure 1: General CAD overview of system. Note that there is a horizontal panning axis and flywheel components. 
 
 ![servo](https://github.com/fmoren05/Term-Project/assets/156385954/ded17ace-ae5a-4ab5-a130-a17aa628b9eb)
 
-
-
 Figure 2: Firing sequence schematic of system. Note that the servo trigger will push the nerf bullet into the flywheels.
-
 
 # Software Design:
 ![image](https://github.com/fmoren05/Term-Project/assets/156385954/47345f5e-ff6a-48bf-90e8-84db1d92e567)
+
+
 Figure 3. Low-side mosfet switch used for flywheel motors. 
 
 ![image](https://github.com/fmoren05/Term-Project/assets/156385954/1772b2a8-6f60-4d94-9b0b-320cfb8660c2)
+
+
 Figure 4: 12V to 6V voltage regulator used for servo trigger motor. 
 
 # Discussion of Results:
