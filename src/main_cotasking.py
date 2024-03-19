@@ -52,7 +52,7 @@ def firing_sequence_fun():
     cam = Progress1.MLX_Cam(i2c_bus)
     # Actual important stuff is below this line-----------------------------------------
 
-    Flywheel_ON_OFF_TestRun.start_flywheel()
+    
     utime.sleep_ms(2000)
     enc.zero()
     while True:
@@ -90,16 +90,8 @@ def firing_sequence_fun():
             moe.set_duty_cycle(0)
             servo1.set_pos(250)
             utime.sleep_ms(500)
-            Flywheel_ON_OFF_TestRun.stop_flywheel()
             servo1.set_pos(0)
             utime.sleep_ms(500)
-
-            # moe.set_duty_cycle(0)
-            # servo1.set_pos(250)
-            # utime.sleep_ms(500)
-            # Flywheel_ON_OFF_TestRun.stop_flywheel()
-            # servo1.set_pos(0)
-            # utime.sleep_ms(500)
 
             Kp = 0.17
             Ki = 0.1
@@ -111,7 +103,7 @@ def firing_sequence_fun():
                 current_position = enc.read()
                 output = close.run(current_position)
                 moe.set_duty_cycle(output)
-                # print(current_position)
+                # print(current_position) #used for testing
                 utime.sleep_ms(10)
             moe.set_duty_cycle(0)
             break
@@ -127,14 +119,13 @@ def firing_sequence_fun():
 def flywheel_motors_fun():
     """!
     Task function for Flywheel Motors.
-    Activates the low- side MOSFET switch for a set time limit.
+    Activates the low-side MOSFET switch for a set time limit.
     """
-    pinC0 = pyb.Pin(pyb.Pin.board.Pc0, pyb.Pin.OUT_PP)
     
     while True:
-        pinC0.value(1)
+        Flywheel.start_flywheel()
         utime.sleep_ms(10000)
-        pinC0.value(0)
+        Flywheel.stop_flywheel()
         break
 
 #----------------------------------------------------------------------------------
