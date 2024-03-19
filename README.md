@@ -7,17 +7,26 @@ Our turret design for the ME 405 term project features a dynamic combination of 
 
 Key Components
 
-Microcontroller: Utilizes a microcontroller for running the control algorithms and managing task scheduling. Common choices include STM32, Arduino, or similar platforms.
+Microcontroller: STM32L476RG Nucelo (From Lab, Quantity: 1)
 
-Motor Driver: Incorporates motor driver circuits for driving the motors. These drivers provide the necessary power and control signals for motor operation.
+Motor Drivers: Lab Encoder Motors (Used For Panning Axis, Quantity: 1)
 
-Encoders: Utilizes rotary encoders for providing feedback on motor position. These sensors ensure accurate positioning and enable closed-loop control.
+Servo Drivers: S51 Servo (Used As Trigger, Quantity: 1)
+
+DC Motors: Gikfun 1.5V-6V EK1450 (Used As Flywheels, Quantity: 2)
+
+Lazy Susan: (Used For Panning Axis, Quantity: 1)
+
+Nerf Fortnite Maganize: (Used To Hold Nerf Bullets, Quantity: 1)
+
+Gears+Housing: (Used 3D Printed Parts from ENDER 3)
+
 
 Sensors: May include additional sensors for environment monitoring or feedback, depending on the application requirements.
 Peripheral Devices: Interfaces with peripheral devices such as cameras, temperature sensors, or other actuators for expanded functionality.
 
 ![image](https://github.com/fmoren05/Term-Project/assets/132640536/ce465a27-afd6-463f-9f4d-bb921be6ea81)
 
-Software Design:
+# Software Design:
 
 
