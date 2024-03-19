@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TERMPROJECT: src.motor_control Namespace Reference</title>
+<title>TERMPROJECT: C:/Users/beren/OneDrive/Desktop/School stuff/Classes/ME405/TERMPROJECT/src/encoder_reader.py File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -56,7 +56,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('namespacesrc_1_1motor__control.html',''); initResizable(); });
+$(function(){initNavTree('encoder__reader_8py.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -64,47 +64,42 @@ $(function(){initNavTree('namespacesrc_1_1motor__control.html',''); initResizabl
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">src.motor_control Namespace Reference</div></div>
+  <div class="headertitle"><div class="title">encoder_reader.py File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implements an encoder reader using Pyboard's Timer and Pin modules.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1motor__control_1_1_motor_driver.html">MotorDriver</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsrc_1_1encoder__reader_1_1_encoder.html">src.encoder_reader.Encoder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an encoder reader.  <a href="classsrc_1_1encoder__reader_1_1_encoder.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a96670c43e4dd664814bf1f3d7543dca3" id="r_a96670c43e4dd664814bf1f3d7543dca3"><td class="memItemLeft" align="right" valign="top"><a id="a96670c43e4dd664814bf1f3d7543dca3" name="a96670c43e4dd664814bf1f3d7543dca3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>moe</b> = <a class="el" href="classsrc_1_1motor__control_1_1_motor_driver.html">MotorDriver</a>(Pin.board.PC1, Pin.board.PA0, Pin.board.PA1, 5)</td></tr>
-<tr class="separator:a96670c43e4dd664814bf1f3d7543dca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e011d34c60e2453b68adde88351685b" id="r_a9e011d34c60e2453b68adde88351685b"><td class="memItemLeft" align="right" valign="top"><a id="a9e011d34c60e2453b68adde88351685b" name="a9e011d34c60e2453b68adde88351685b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>src.encoder_reader.encoder1</b> = <a class="el" href="classsrc_1_1encoder__reader_1_1_encoder.html">Encoder</a>(4, Pin.board.PB6, Pin.board.PB7)</td></tr>
+<tr class="separator:a9e011d34c60e2453b68adde88351685b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a1f86b14a2affb5900314d1639c9421" id="r_a1a1f86b14a2affb5900314d1639c9421"><td class="memItemLeft" align="right" valign="top"><a id="a1a1f86b14a2affb5900314d1639c9421" name="a1a1f86b14a2affb5900314d1639c9421"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>src.encoder_reader.encoder2</b> = <a class="el" href="classsrc_1_1encoder__reader_1_1_encoder.html">Encoder</a>(8, Pin.board.PC6, Pin.board.PC7)</td></tr>
+<tr class="separator:a1a1f86b14a2affb5900314d1639c9421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a938d502c11fcada7e781340662a7c26b" id="r_a938d502c11fcada7e781340662a7c26b"><td class="memItemLeft" align="right" valign="top"><a id="a938d502c11fcada7e781340662a7c26b" name="a938d502c11fcada7e781340662a7c26b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>src.encoder_reader.encoder2_value</b> = encoder2.read()</td></tr>
+<tr class="separator:a938d502c11fcada7e781340662a7c26b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">@file motor_control.py
-@brief Defines a MotorDriver class for controlling motors in an ME405 kit.
-
-@details
-This script defines a MotorDriver class, which allows controlling motors by initializing GPIO
-pins and setting the duty cycle to control torque. 
-
-@note
-This class assumes that the motor driver is used in an ME405 kit.
-
-@author
-Authors: Conor Schott, Fermin Moreno, Berent Baysal
-
-@date
-Date: 2/22/24
-
-@dependencies
-Dependencies:
-- pyb
-!</pre> </div></div><!-- contents -->
+<div class="textblock"><p>Implements an encoder reader using Pyboard's Timer and Pin modules. </p>
+<p>This module contains the Encoder class, which implements an encoder reader using Pyboard's Timer and Pin modules.</p>
+<dl class="section author"><dt>Author</dt><dd>Authors: Conor Schott, Fermin Moreno, Berent Baysal</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>Date: 16th February 2024 </dd></dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1motor__control.html">motor_control</a></li>
+    <li class="navelem"><a class="el" href="dir_64bcdffabce771fa061eef5849cc0e78.html">TERMPROJECT</a></li><li class="navelem"><a class="el" href="dir_a474ee46a6d992654e89a98198fda2b0.html">src</a></li><li class="navelem"><a class="el" href="encoder__reader_8py.html">encoder_reader.py</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>

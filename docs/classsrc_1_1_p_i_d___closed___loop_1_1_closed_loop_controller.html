@@ -68,20 +68,29 @@ $(function(){initNavTree('classsrc_1_1_p_i_d___closed___loop_1_1_closed_loop_con
   <div class="headertitle"><div class="title">src.PID_Closed_Loop.ClosedLoopController Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implements a ClosedLoopController class for controlling a system using closed-loop feedback.  
+ <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abcec59ee09f8856e0f83416e27e70e40" id="r_abcec59ee09f8856e0f83416e27e70e40"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcec59ee09f8856e0f83416e27e70e40">__init__</a> (self, Kp, Ki, Kd, setpoint)</td></tr>
+<tr class="memdesc:abcec59ee09f8856e0f83416e27e70e40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the ClosedLoopController object with the provided parameters.  <br /></td></tr>
 <tr class="separator:abcec59ee09f8856e0f83416e27e70e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85901250deefff6ede971aeee4a2f52e" id="r_a85901250deefff6ede971aeee4a2f52e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85901250deefff6ede971aeee4a2f52e">run</a> (self, measured_output)</td></tr>
+<tr class="memdesc:a85901250deefff6ede971aeee4a2f52e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the closed-loop control algorithm to calculate the actuation signal.  <br /></td></tr>
 <tr class="separator:a85901250deefff6ede971aeee4a2f52e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c0122eab39505dc3764c29fede6101d" id="r_a8c0122eab39505dc3764c29fede6101d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c0122eab39505dc3764c29fede6101d">set_setpoint</a> (self, setpoint)</td></tr>
+<tr class="memdesc:a8c0122eab39505dc3764c29fede6101d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the desired setpoint for the system.  <br /></td></tr>
 <tr class="separator:a8c0122eab39505dc3764c29fede6101d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3391d1428c11450e442176eaff0520ae" id="r_a3391d1428c11450e442176eaff0520ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3391d1428c11450e442176eaff0520ae">set_Kp</a> (self, Kp)</td></tr>
+<tr class="memdesc:a3391d1428c11450e442176eaff0520ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the proportional gain constant (Kp).  <br /></td></tr>
 <tr class="separator:a3391d1428c11450e442176eaff0520ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4be8e88fe05b778fed70f9a74ab48755" id="r_a4be8e88fe05b778fed70f9a74ab48755"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4be8e88fe05b778fed70f9a74ab48755">set_Ki</a> (self, Ki)</td></tr>
+<tr class="memdesc:a4be8e88fe05b778fed70f9a74ab48755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the integral gain constant (Ki).  <br /></td></tr>
 <tr class="separator:a4be8e88fe05b778fed70f9a74ab48755"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93d172699aa812927dca6f4803508ec2" id="r_a93d172699aa812927dca6f4803508ec2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93d172699aa812927dca6f4803508ec2">set_Kd</a> (self, Kd)</td></tr>
+<tr class="memdesc:a93d172699aa812927dca6f4803508ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the derivative gain constant (Kd).  <br /></td></tr>
 <tr class="separator:a93d172699aa812927dca6f4803508ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -127,8 +136,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a99e51bc123a9aebe79f8fa858670c342"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Implements a ClosedLoopController class for controlling a system using closed-loop feedback.
-!</pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="textblock"><p>Implements a ClosedLoopController class for controlling a system using closed-loop feedback. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abcec59ee09f8856e0f83416e27e70e40" name="abcec59ee09f8856e0f83416e27e70e40"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abcec59ee09f8856e0f83416e27e70e40">&#9670;&#160;</a></span>__init__()</h2>
 
@@ -162,12 +171,18 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Initializes the ClosedLoopController object with the provided parameters.
-@param Kp: Proportional gain constant
-@param Ki: Integral gain constant
-@param Kd: Derivative gain constant
-@param setpoint: Desired setpoint for the system
-!</pre> 
+
+<p>Initializes the ClosedLoopController object with the provided parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Kp</td><td>Proportional gain constant </td></tr>
+    <tr><td class="paramname">Ki</td><td>Integral gain constant </td></tr>
+    <tr><td class="paramname">Kd</td><td>Derivative gain constant </td></tr>
+    <tr><td class="paramname">setpoint</td><td>Desired setpoint for the system </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -189,10 +204,16 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Runs the closed-loop control algorithm to calculate the actuation signal.
-@param measured_output: Measured output from the system
-@return: Actuation signal calculated by the controller
-!</pre> 
+
+<p>Runs the closed-loop control algorithm to calculate the actuation signal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">measured_output</td><td>Measured output from the system </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: Actuation signal calculated by the controller </dd></dl>
+
 </div>
 </div>
 <a id="a93d172699aa812927dca6f4803508ec2" name="a93d172699aa812927dca6f4803508ec2"></a>
@@ -213,9 +234,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Sets the derivative gain constant (Kd).
-@param Kd: Derivative gain constant
-!</pre> 
+
+<p>Sets the derivative gain constant (Kd). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Kd</td><td>Derivative gain constant </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a4be8e88fe05b778fed70f9a74ab48755" name="a4be8e88fe05b778fed70f9a74ab48755"></a>
@@ -236,9 +263,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Sets the integral gain constant (Ki).
-@param Ki: Integral gain constant
-!</pre> 
+
+<p>Sets the integral gain constant (Ki). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Ki</td><td>Integral gain constant </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a3391d1428c11450e442176eaff0520ae" name="a3391d1428c11450e442176eaff0520ae"></a>
@@ -259,9 +292,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Sets the proportional gain constant (Kp).
-@param Kp: Proportional gain constant
-!</pre> 
+
+<p>Sets the proportional gain constant (Kp). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Kp</td><td>Proportional gain constant </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a8c0122eab39505dc3764c29fede6101d" name="a8c0122eab39505dc3764c29fede6101d"></a>
@@ -282,9 +321,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Sets the desired setpoint for the system.
-@param setpoint: Desired setpoint for the system
-!</pre> 
+
+<p>Sets the desired setpoint for the system. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">setpoint</td><td>Desired setpoint for the system </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -295,7 +340,7 @@ Public Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1_p_i_d___closed___loop.html">PID_Closed_Loop</a></li><li class="navelem"><a class="el" href="classsrc_1_1_p_i_d___closed___loop_1_1_closed_loop_controller.html">ClosedLoopController</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a class="el" href="namespacesrc_1_1_p_i_d___closed___loop.html">PID_Closed_Loop</a></li><li class="navelem"><a class="el" href="classsrc_1_1_p_i_d___closed___loop_1_1_closed_loop_controller.html">ClosedLoopController</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>

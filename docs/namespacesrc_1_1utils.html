@@ -68,6 +68,9 @@ $(function(){initNavTree('namespacesrc_1_1utils.html',''); initResizable(); });
   <div class="headertitle"><div class="title">src.utils Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Struct and Field Description Utilities.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -79,10 +82,13 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa809b682b9bfb0892db71975963a8fc9" id="r_aa809b682b9bfb0892db71975963a8fc9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa809b682b9bfb0892db71975963a8fc9">array_filled</a> (typecode, length, fill=0)</td></tr>
+<tr class="memdesc:aa809b682b9bfb0892db71975963a8fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an array filled with a specified value.  <br /></td></tr>
 <tr class="separator:aa809b682b9bfb0892db71975963a8fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abaf0fc8f2928a9db096ded0026bba7dd" id="r_abaf0fc8f2928a9db096ded0026bba7dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abaf0fc8f2928a9db096ded0026bba7dd">twos_complement</a> (bits, value)</td></tr>
+<tr class="memdesc:abaf0fc8f2928a9db096ded0026bba7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the two's complement of a value given its bit size.  <br /></td></tr>
 <tr class="separator:abaf0fc8f2928a9db096ded0026bba7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95714a5226287dfec83dd58cb35db3f0" id="r_a95714a5226287dfec83dd58cb35db3f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95714a5226287dfec83dd58cb35db3f0">field_desc</a> (name, bits, pos=0, signed=False)</td></tr>
+<tr class="memdesc:a95714a5226287dfec83dd58cb35db3f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a field description namedtuple.  <br /></td></tr>
 <tr class="separator:a95714a5226287dfec83dd58cb35db3f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -98,27 +104,16 @@ Variables</h2></td></tr>
 <tr class="separator:aa8b089b6b91bc3d12f65db50775b06df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Struct and Field Description Utilities
-
-This script provides utilities for working with structured data and defining field descriptions. It includes functions for creating arrays filled with a specified value, calculating two's complement, and creating field descriptions.
-
-The `array_filled` function creates an array of a specified type and length, optionally filled with a specified value.
-
-The `twos_complement` function calculates the two's complement of a value given its bit size.
-
-The `field_desc` function creates a field description namedtuple based on the name, number of bits, position, and signedness of a field.
-
-The `StructProto` class defines the layout of structured data based on field descriptions.
-
-The `Struct` class provides methods for accessing and modifying structured data using a buffer and a predefined layout.
-
-@author
-Author:
-Dr. Ridgely
-
-Modifed by: Conor Schott, Fermin Moreno, Berent Baysal
-
-!</pre> </div><h2 class="groupheader">Function Documentation</h2>
+<div class="textblock"><p>Struct and Field Description Utilities. </p>
+<p>This script provides utilities for working with structured data and defining field descriptions. It includes functions for creating arrays filled with a specified value, calculating two's complement, and creating field descriptions.</p>
+<p>The <code>array_filled</code> function creates an array of a specified type and length, optionally filled with a specified value.</p>
+<p>The <code>twos_complement</code> function calculates the two's complement of a value given its bit size.</p>
+<p>The <code>field_desc</code> function creates a field description namedtuple based on the name, number of bits, position, and signedness of a field.</p>
+<p>The <code>StructProto</code> class defines the layout of structured data based on field descriptions.</p>
+<p>The <code>Struct</code> class provides methods for accessing and modifying structured data using a buffer and a predefined layout.</p>
+<dl class="section author"><dt>Author</dt><dd>Author: Dr. Ridgely</dd></dl>
+<p>Modifed by: Conor Schott, Fermin Moreno, Berent Baysal </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="aa809b682b9bfb0892db71975963a8fc9" name="aa809b682b9bfb0892db71975963a8fc9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa809b682b9bfb0892db71975963a8fc9">&#9670;&#160;</a></span>array_filled()</h2>
 
@@ -142,16 +137,11 @@ Modifed by: Conor Schott, Fermin Moreno, Berent Baysal
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Create an array filled with a specified value.
 
-Args:
-    typecode (str): Typecode of the array (e.g., 'H' for unsigned short).
-    length (int): Length of the array.
-    fill (int, optional): Value to fill the array with. Defaults to 0.
+<p>Create an array filled with a specified value. </p>
+<p>Args: typecode (str): Typecode of the array (e.g., 'H' for unsigned short). length (int): Length of the array. fill (int, optional): Value to fill the array with. Defaults to 0.</p>
+<p>Returns: array: Filled array. </p>
 
-Returns:
-    array: Filled array.
-!</pre> 
 </div>
 </div>
 <a id="a95714a5226287dfec83dd58cb35db3f0" name="a95714a5226287dfec83dd58cb35db3f0"></a>
@@ -182,17 +172,11 @@ Returns:
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Create a field description namedtuple.
 
-Args:
-    name (str): Name of the field.
-    bits (int or object): Number of bits for the field or FD_WORD/FD_BYTE for word/byte-sized fields.
-    pos (int, optional): Position of the field. Defaults to 0.
-    signed (bool, optional): Whether the field is signed. Defaults to False.
+<p>Create a field description namedtuple. </p>
+<p>Args: name (str): Name of the field. bits (int or object): Number of bits for the field or FD_WORD/FD_BYTE for word/byte-sized fields. pos (int, optional): Position of the field. Defaults to 0. signed (bool, optional): Whether the field is signed. Defaults to False.</p>
+<p>Returns: FieldDesc: Namedtuple describing the field. </p>
 
-Returns:
-    FieldDesc: Namedtuple describing the field.
-!</pre> 
 </div>
 </div>
 <a id="abaf0fc8f2928a9db096ded0026bba7dd" name="abaf0fc8f2928a9db096ded0026bba7dd"></a>
@@ -213,15 +197,11 @@ Returns:
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Calculate the two's complement of a value given its bit size.
 
-Args:
-    bits (int): Number of bits.
-    value (int): Value to calculate the two's complement of.
+<p>Calculate the two's complement of a value given its bit size. </p>
+<p>Args: bits (int): Number of bits. value (int): Value to calculate the two's complement of.</p>
+<p>Returns: int: Two's complement of the value. </p>
 
-Returns:
-    int: Two's complement of the value.
-!</pre> 
 </div>
 </div>
 </div><!-- contents -->
@@ -229,7 +209,7 @@ Returns:
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1utils.html">utils</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><a class="el" href="namespacesrc_1_1utils.html">utils</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>

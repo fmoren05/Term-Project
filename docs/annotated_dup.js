@@ -1,17 +1,14 @@
 var annotated_dup =
 [
-    [ "src", "namespacesrc.html", [
-      [ "calibration", "namespacesrc_1_1calibration.html", [
+    [ "src", null, [
+      [ "calibration", null, [
         [ "CameraCalibration", "classsrc_1_1calibration_1_1_camera_calibration.html", "classsrc_1_1calibration_1_1_camera_calibration" ],
         [ "PixelCalibrationData", "classsrc_1_1calibration_1_1_pixel_calibration_data.html", "classsrc_1_1calibration_1_1_pixel_calibration_data" ]
       ] ],
-      [ "closed_loop", "namespacesrc_1_1closed__loop.html", [
-        [ "ClosedLoopController", "classsrc_1_1closed__loop_1_1_closed_loop_controller.html", "classsrc_1_1closed__loop_1_1_closed_loop_controller" ]
-      ] ],
-      [ "encoder_reader", "namespacesrc_1_1encoder__reader.html", [
+      [ "encoder_reader", null, [
         [ "Encoder", "classsrc_1_1encoder__reader_1_1_encoder.html", "classsrc_1_1encoder__reader_1_1_encoder" ]
       ] ],
-      [ "image", "namespacesrc_1_1image.html", [
+      [ "image", null, [
         [ "_BasePattern", "classsrc_1_1image_1_1___base_pattern.html", "classsrc_1_1image_1_1___base_pattern" ],
         [ "ChessPattern", "classsrc_1_1image_1_1_chess_pattern.html", "classsrc_1_1image_1_1_chess_pattern" ],
         [ "InterleavedPattern", "classsrc_1_1image_1_1_interleaved_pattern.html", "classsrc_1_1image_1_1_interleaved_pattern" ],
@@ -21,7 +18,7 @@ var annotated_dup =
       [ "image_to_encoder", "namespacesrc_1_1image__to__encoder.html", [
         [ "MLX_Cam", "classsrc_1_1image__to__encoder_1_1_m_l_x___cam.html", "classsrc_1_1image__to__encoder_1_1_m_l_x___cam" ]
       ] ],
-      [ "motor_control", "namespacesrc_1_1motor__control.html", [
+      [ "motor_control", null, [
         [ "MotorDriver", "classsrc_1_1motor__control_1_1_motor_driver.html", "classsrc_1_1motor__control_1_1_motor_driver" ]
       ] ],
       [ "PID_Closed_Loop", "namespacesrc_1_1_p_i_d___closed___loop.html", [

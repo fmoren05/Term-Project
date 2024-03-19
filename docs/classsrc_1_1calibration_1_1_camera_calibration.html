@@ -69,10 +69,14 @@ $(function(){initNavTree('classsrc_1_1calibration_1_1_camera_calibration.html','
   <div class="headertitle"><div class="title">src.calibration.CameraCalibration Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class representing camera calibration.  
+ <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a355911e971bb5240570b0726b6db14ee" id="r_a355911e971bb5240570b0726b6db14ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a355911e971bb5240570b0726b6db14ee">__init__</a> (self, iface, eeprom, *emissivity=1, use_tgc=False)</td></tr>
+<tr class="memdesc:a355911e971bb5240570b0726b6db14ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the camera calibration.  <br /></td></tr>
 <tr class="separator:a355911e971bb5240570b0726b6db14ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -183,17 +187,21 @@ Public Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ab0a01bf084cb3516bc9aec615e1495e2" id="r_ab0a01bf084cb3516bc9aec615e1495e2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0a01bf084cb3516bc9aec615e1495e2">_calc_pix_os_ref</a> (self, iface, eeprom)</td></tr>
+<tr class="memdesc:ab0a01bf084cb3516bc9aec615e1495e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the offset reference for pixel calibration.  <br /></td></tr>
 <tr class="separator:ab0a01bf084cb3516bc9aec615e1495e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afea0b604a630b775555c68c9d5ed2e66" id="r_afea0b604a630b775555c68c9d5ed2e66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afea0b604a630b775555c68c9d5ed2e66">_calc_pix_alpha_ref</a> (self, iface, eeprom)</td></tr>
+<tr class="memdesc:afea0b604a630b775555c68c9d5ed2e66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the alpha reference for pixel calibration.  <br /></td></tr>
 <tr class="separator:afea0b604a630b775555c68c9d5ed2e66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bae0efc003fcc5c2023f306a71e0942" id="r_a0bae0efc003fcc5c2023f306a71e0942"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bae0efc003fcc5c2023f306a71e0942">_calc_pix_kta</a> (self, eeprom)</td></tr>
+<tr class="memdesc:a0bae0efc003fcc5c2023f306a71e0942"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the KTA for pixel calibration.  <br /></td></tr>
 <tr class="separator:a0bae0efc003fcc5c2023f306a71e0942"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc15153475dd223e15a2776cea1e7734" id="r_afc15153475dd223e15a2776cea1e7734"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc15153475dd223e15a2776cea1e7734">_calc_il_offset</a> (self)</td></tr>
+<tr class="memdesc:afc15153475dd223e15a2776cea1e7734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the interleaved offset.  <br /></td></tr>
 <tr class="separator:afc15153475dd223e15a2776cea1e7734"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Class representing camera calibration.
-!</pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="textblock"><p>Class representing camera calibration. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a355911e971bb5240570b0726b6db14ee" name="a355911e971bb5240570b0726b6db14ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a355911e971bb5240570b0726b6db14ee">&#9670;&#160;</a></span>__init__()</h2>
 
@@ -227,17 +235,18 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Initialize the camera calibration.
 
-@param iface: The camera interface.
-@type iface: object
-@param eeprom: The EEPROM data.
-@type eeprom: dict
-@param emissivity: The emissivity value.
-@type emissivity: float
-@param use_tgc: Flag indicating whether TGC (temperature gradient compensation) should be used.
-@type use_tgc: bool
-!</pre> 
+<p>Initialize the camera calibration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iface</td><td>The camera interface. @type iface: object </td></tr>
+    <tr><td class="paramname">eeprom</td><td>The EEPROM data. @type eeprom: dict </td></tr>
+    <tr><td class="paramname">emissivity</td><td>The emissivity value. @type emissivity: float </td></tr>
+    <tr><td class="paramname">use_tgc</td><td>Flag indicating whether TGC (temperature gradient compensation) should be used. @type use_tgc: bool </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -263,10 +272,10 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<pre class="fragment">Calculate the interleaved offset.
 
-@return: An iterator over the calculated interleaved offset.
-!</pre> 
+<p>Calculate the interleaved offset. </p>
+<dl class="section return"><dt>Returns</dt><dd>: An iterator over the calculated interleaved offset. </dd></dl>
+
 </div>
 </div>
 <a id="afea0b604a630b775555c68c9d5ed2e66" name="afea0b604a630b775555c68c9d5ed2e66"></a>
@@ -300,14 +309,17 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<pre class="fragment">Calculate the alpha reference for pixel calibration.
 
-@param iface: The camera interface.
-@type iface: object
-@param eeprom: The EEPROM data.
-@type eeprom: dict
-@return: An iterator over the calculated alpha reference.
-!</pre> 
+<p>Calculate the alpha reference for pixel calibration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iface</td><td>The camera interface. @type iface: object </td></tr>
+    <tr><td class="paramname">eeprom</td><td>The EEPROM data. @type eeprom: dict </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: An iterator over the calculated alpha reference. </dd></dl>
+
 </div>
 </div>
 <a id="a0bae0efc003fcc5c2023f306a71e0942" name="a0bae0efc003fcc5c2023f306a71e0942"></a>
@@ -336,12 +348,16 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<pre class="fragment">Calculate the KTA for pixel calibration.
 
-@param eeprom: The EEPROM data.
-@type eeprom: dict
-@return: An iterator over the calculated KTA.
-!</pre> 
+<p>Calculate the KTA for pixel calibration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">eeprom</td><td>The EEPROM data. @type eeprom: dict </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: An iterator over the calculated KTA. </dd></dl>
+
 </div>
 </div>
 <a id="ab0a01bf084cb3516bc9aec615e1495e2" name="ab0a01bf084cb3516bc9aec615e1495e2"></a>
@@ -375,14 +391,17 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<pre class="fragment">Calculate the offset reference for pixel calibration.
 
-@param iface: The camera interface.
-@type iface: object
-@param eeprom: The EEPROM data.
-@type eeprom: dict
-@return: An iterator over the calculated offset reference.
-!</pre> 
+<p>Calculate the offset reference for pixel calibration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iface</td><td>The camera interface. @type iface: object </td></tr>
+    <tr><td class="paramname">eeprom</td><td>The EEPROM data. @type eeprom: dict </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>: An iterator over the calculated offset reference. </dd></dl>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -393,7 +412,7 @@ Protected Member Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1calibration.html">calibration</a></li><li class="navelem"><a class="el" href="classsrc_1_1calibration_1_1_camera_calibration.html">CameraCalibration</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>calibration</b></li><li class="navelem"><a class="el" href="classsrc_1_1calibration_1_1_camera_calibration.html">CameraCalibration</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>

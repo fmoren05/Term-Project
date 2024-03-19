@@ -68,14 +68,21 @@ $(function(){initNavTree('classsrc_1_1encoder__reader_1_1_encoder.html',''); ini
   <div class="headertitle"><div class="title">src.encoder_reader.Encoder Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class representing an encoder reader.  
+ <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad42193ff0daca577f4ed8a7b417ffba2" id="r_ad42193ff0daca577f4ed8a7b417ffba2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad42193ff0daca577f4ed8a7b417ffba2">__init__</a> (self, timer, enc_pin_A, enc_pin_B)</td></tr>
+<tr class="memdesc:ad42193ff0daca577f4ed8a7b417ffba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the encoder reader.  <br /></td></tr>
 <tr class="separator:ad42193ff0daca577f4ed8a7b417ffba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88a7a07c10066e35fc82128ceb80c6d1" id="r_a88a7a07c10066e35fc82128ceb80c6d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88a7a07c10066e35fc82128ceb80c6d1">read</a> (self)</td></tr>
+<tr class="memdesc:a88a7a07c10066e35fc82128ceb80c6d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the encoder values.  <br /></td></tr>
 <tr class="separator:a88a7a07c10066e35fc82128ceb80c6d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53490a5c39c7fdc9108561a95d1e9a49" id="r_a53490a5c39c7fdc9108561a95d1e9a49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53490a5c39c7fdc9108561a95d1e9a49">zero</a> (self)</td></tr>
+<tr class="memitem:a53490a5c39c7fdc9108561a95d1e9a49" id="r_a53490a5c39c7fdc9108561a95d1e9a49"><td class="memItemLeft" align="right" valign="top"><a id="a53490a5c39c7fdc9108561a95d1e9a49" name="a53490a5c39c7fdc9108561a95d1e9a49"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>zero</b> (self)</td></tr>
+<tr class="memdesc:a53490a5c39c7fdc9108561a95d1e9a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the count to zero at the current position for both encoders. <br /></td></tr>
 <tr class="separator:a53490a5c39c7fdc9108561a95d1e9a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -97,8 +104,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a9e325ecafdada338e7531df837cbb080"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><pre class="fragment">Class representing an encoder reader.
-!</pre> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<div class="textblock"><p>Class representing an encoder reader. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad42193ff0daca577f4ed8a7b417ffba2" name="ad42193ff0daca577f4ed8a7b417ffba2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad42193ff0daca577f4ed8a7b417ffba2">&#9670;&#160;</a></span>__init__()</h2>
 
@@ -127,15 +134,17 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Initialize the encoder reader.
 
-@param timer: Timer for encoder counting.
-@type timer: int
-@param enc_pin_A: Encoder channel A pin.
-@type enc_pin_A: pyb.Pin
-@param enc_pin_B: Encoder channel B pin.
-@type enc_pin_B: pyb.Pin
-!</pre> 
+<p>Initialize the encoder reader. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timer</td><td>Timer for encoder counting. @type timer: int </td></tr>
+    <tr><td class="paramname">enc_pin_A</td><td>Encoder channel A pin. @type enc_pin_A: pyb.Pin </td></tr>
+    <tr><td class="paramname">enc_pin_B</td><td>Encoder channel B pin. @type enc_pin_B: pyb.Pin </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -153,40 +162,21 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">Read the encoder values.
 
-@return: Tuple containing the current encoder count, delta, and channel A and B values.
-@rtype: int
-!</pre> 
-</div>
-</div>
-<a id="a53490a5c39c7fdc9108561a95d1e9a49" name="a53490a5c39c7fdc9108561a95d1e9a49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53490a5c39c7fdc9108561a95d1e9a49">&#9670;&#160;</a></span>zero()</h2>
+<p>Read the encoder values. </p>
+<dl class="section return"><dt>Returns</dt><dd>: Tuple containing the current encoder count, delta, and channel A and B values. @rtype: int </dd></dl>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">src.encoder_reader.Encoder.zero </td>
-          <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<pre class="fragment">Set the count to zero at the current position for both encoders.
-!</pre> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/beren/OneDrive/Desktop/School stuff/Classes/ME405/TERMPROJECT/src/<b>encoder_reader.py</b></li>
+<li>C:/Users/beren/OneDrive/Desktop/School stuff/Classes/ME405/TERMPROJECT/src/<a class="el" href="encoder__reader_8py.html">encoder_reader.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacesrc.html">src</a></li><li class="navelem"><a class="el" href="namespacesrc_1_1encoder__reader.html">encoder_reader</a></li><li class="navelem"><a class="el" href="classsrc_1_1encoder__reader_1_1_encoder.html">Encoder</a></li>
+    <li class="navelem"><b>src</b></li><li class="navelem"><b>encoder_reader</b></li><li class="navelem"><a class="el" href="classsrc_1_1encoder__reader_1_1_encoder.html">Encoder</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>

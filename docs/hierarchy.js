@@ -6,7 +6,6 @@ var hierarchy =
     ] ],
     [ "src.calibration.CameraCalibration", "classsrc_1_1calibration_1_1_camera_calibration.html", null ],
     [ "src.regmap.CameraInterface", "classsrc_1_1regmap_1_1_camera_interface.html", null ],
-    [ "src.closed_loop.ClosedLoopController", "classsrc_1_1closed__loop_1_1_closed_loop_controller.html", null ],
     [ "src.PID_Closed_Loop.ClosedLoopController", "classsrc_1_1_p_i_d___closed___loop_1_1_closed_loop_controller.html", null ],
     [ "src.encoder_reader.Encoder", "classsrc_1_1encoder__reader_1_1_encoder.html", null ],
     [ "Exception", null, [
