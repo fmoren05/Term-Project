@@ -1,5 +1,7 @@
 """!
-This script implements tasks for initializing hardware components, finding hotspots using a camera, and controlling a motor using PID control.
+This script implements tasks for initializing hardware components, finding hotspots using a camera, and 
+controlling a motor using PID control. This was intended to be all done using Cotask. Unfortunately, the program
+was never able to fully function, but the intent was there.
 """
 
 import gc  # Importing garbage collector for memory management
@@ -20,9 +22,9 @@ from mlx90640.image import ChessPattern, InterleavedPattern
 
 
 def task_init():
-    """
+    """!
     Task to initialize hardware components such as encoder, motor, servo, and camera.
-    !"""
+    """
     # Initialize encoder, motor, servo, and camera
     enc = encoder_reader.Encoder(8, pyb.Pin.board.PC6, pyb.Pin.board.PC7)
     moe = motor_control.MotorDriver(pyb.Pin.board.PC1, pyb.Pin.board.PA0, pyb.Pin.board.PA1, 5)
@@ -41,9 +43,9 @@ def task_init():
 
 # Task function for finding the hotspot
 def task_find_hotspot():
-    """
+    """!
     Task to find the hotspot using the camera.
-    !"""
+    """
     # Initialize encoder, motor, servo, and camera
     enc = encoder_reader.Encoder(8, pyb.Pin.board.PC6, pyb.Pin.board.PC7)
     moe = motor_control.MotorDriver(pyb.Pin.board.PC1, pyb.Pin.board.PA0, pyb.Pin.board.PA1, 5)
@@ -78,9 +80,9 @@ def task_find_hotspot():
 
 # Task function for PID control
 def task_pid_control():
-    """
+    """!
     Task to control the motor using PID control.
-    !"""
+    """
     # Initialize encoder, motor, servo, and camera
     enc = encoder_reader.Encoder(8, pyb.Pin.board.PC6, pyb.Pin.board.PC7)
     moe = motor_control.MotorDriver(pyb.Pin.board.PC1, pyb.Pin.board.PA0, pyb.Pin.board.PA1, 5)
@@ -131,9 +133,9 @@ def task_pid_control():
 
 # Main function to create tasks and start the scheduler
 def main():
-    """
+    """!
     Main function to initialize tasks and start the scheduler.
-    !"""
+    """
     print("Testing ME405 stuff in cotask.py and task_share.py\r\n"
           "Press Ctrl-C to stop and show diagnostics.")
 
