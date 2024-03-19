@@ -5,7 +5,7 @@ Our turret design for the ME 405 term project features a dynamic combination of 
 
 # Hardware Design: 
 
-Key Components
+KEY COMPONENTS
 
 Microcontroller: STM32L476RG Nucelo (From Lab, Quantity: 1)
 
