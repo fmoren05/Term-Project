@@ -1,0 +1,9 @@
+The assembly was created in Fusion360. Not in Solidworks.
+
+Solidworks uses a SLDASM assembly file (.sldasm)
+
+Fusion has its own way to share large assemblies such as this one.
+
+Shown below is the link to get the latest version of the assembly as it is.
+
+>>>>    https://a360.co/3TG8Rc5   <<<<
