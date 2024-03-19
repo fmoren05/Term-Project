@@ -26,6 +26,10 @@ Sensors: May include additional sensors for environment monitoring or feedback, 
 Peripheral Devices: Interfaces with peripheral devices such as cameras, temperature sensors, or other actuators for expanded functionality.
 
 ![image](https://github.com/fmoren05/Term-Project/assets/132640536/ce465a27-afd6-463f-9f4d-bb921be6ea81)
+Figure 1: General CAD overview of system. Note that there is a horizontal panning axis and flywheel components. 
+
+![servo](https://github.com/fmoren05/Term-Project/assets/156385954/ded17ace-ae5a-4ab5-a130-a17aa628b9eb)
+Figure 2: Firing sequence schematic of system. Note that the servo trigger will push the nerf bullet into the flywheels.
 
 # Software Design:
 
