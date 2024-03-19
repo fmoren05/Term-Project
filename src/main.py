@@ -1,7 +1,7 @@
 """!
-@brief This script demonstrates cooperative multitasking using Cotask on a microcontroller.
-Tasks 1 and 2 perform closed-loop control of motors based on encoder feedback.
-The script also utilizes shared variables and a queue for inter-task communication.
+@brief This script demonstrates the firing sequence without the use of Cotask. It runs all needed programs
+in the designated order. The flywheels used for launching the Nerf bullet are manually turned on for the
+firing sequence to work.
 
 @file main.py
 @author Conor Schott, Fermin Moreno, Berent Baysal
