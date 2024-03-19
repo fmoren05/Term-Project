@@ -39,5 +39,15 @@ Figure 2: Firing sequence schematic of system. Note that the servo trigger will 
 
 # Software Design:
 
+# Discussion of Results:
+
+The system was extensively tested using various test scenarios to evaluate its performance and reliability. Testing involved validating closed-loop motor control under different conditions, such as a moving versus nonmoving target. Furthermore, different movement orientations were considered, such as hands out, facing sideways, and squatting. As a result, we ended up determining the best encoder position based on moving the individual across the table and then plotting the results. From there, we created a position calculation based on where the user was relative to the table, which corresponded to an encoder count range for our panning axis motor. As a result, our system was robust for its environment if the user’s height isn’t below or above our fixed turret height. When recording our tests, it was determined that our turret hit the target about 85% of the time. 
+
+# Lessons Learned & Recommendations:
+
+Several key insights were gained during the turret battle session. We didn’t account for groups to rub their hands together and wave them out right after the 5 second timer was done. As a result, our camera tried to lock on to a target that was too high for our turret to hit despite our panning axis accurately positioning itself to fire the hands. Furthermore, it seemed that some groups would drastically change their position right after they 5 second stop condition which would mess with our hotspot detection code as our program was calibrated to start reading data right after the 5 seconds and then fire. If the person drastically changed orientation right after 5 seconds, our camera may only detect its previous movement during the firing sequence. As a result, if you are planning on creating a turret system, we would recommend having a vertical and horizontal panning axis as well as using a better gear system (such as a utilizing concave flywheel that will grab onto the nerf bullet better and helical gears for the panning axis to allow for better meshing). 
+
+
+
 
 
