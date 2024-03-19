@@ -58,7 +58,7 @@ Software Link: https://github.com/fmoren05/Term-Project/tree/main/src
 
 # Electronic Design: 
 
-Our electronic design is displayed below along with depictions of the special circuitry used. Special circuitry included a 12V to 6V voltage regulator as well as a low side MOSFET switch. The panning axis motor used was the one provided for the lab, so it was connected as instructed. We decided to use the B channel pins for the encoder, so we used PC1 for the EN_B, PA0 for IN1_B, and PA1 for IN2_B. The motor voltage wires were also hooked up to the positive and negative B terminals on the motor driver. The motor driver itself was powered by the voltage supply set to 12V with a current limit of 0.5A. The MLX camera was powered by the 3v3 supply and it utilized the SDA and SCL pins on the shoe. Our servo motor utilized the 6V output from the voltage regulator, and it was connected to Pin B6 ont the microconroller. The MOSFET switch utilized Pin C0, and it would regualte between high and low in order to allow for the passing of current to the flywheel motors.
+Our electronic design is displayed below along with depictions of the special circuitry used. Special circuitry included a 12V to 6V voltage regulator as well as a low side MOSFET switch. The panning axis motor used was the one provided for the lab, so it was connected as instructed. We decided to use the B channel pins for the encoder, so we used PC1 for the EN_B, PA0 for IN1_B, and PA1 for IN2_B. The motor voltage wires were also hooked up to the positive and negative B terminals on the motor driver. The motor driver itself was powered by the voltage supply set to 12V with a current limit of 0.5A. The MLX camera was powered by the 3v3 supply and it utilized the SDA and SCL pins on the shoe. Our servo motor utilized the 6V output from the voltage regulator, and it was connected to Pin B6 ont the microconroller. The MOSFET switch utilized Pin C0, and it would regualte between high and low in order to allow for the passing of current to the flywheel motors. Our E-stop for the system was a two input switch, capable of cutting off the 12V supply to the sytem as well as the voltage supply to the flywheel motors.
 
 ![image](https://github.com/fmoren05/Term-Project/assets/156385954/c50f1105-7ef4-47a1-808b-d7fd96c1f143)
 
@@ -99,6 +99,13 @@ Figure 7: Flywheel motor state diagram.
 # Discussion of Results:
 
 The system was extensively tested using various test scenarios to evaluate its performance and reliability. Testing involved validating closed-loop motor control under different conditions, such as a moving versus nonmoving target. Furthermore, different movement orientations were considered, such as hands out, facing sideways, and squatting. As a result, we ended up determining the best encoder position based on moving the individual across the table and then plotting the results. From there, we created a position calculation based on where the user was relative to the table, which corresponded to an encoder count range for our panning axis motor. As a result, our system was robust for its environment if the user’s height isn’t below or above our fixed turret height. When recording our tests, it was determined that our turret hit the target about 85% of the time. 
+
+
+![image](https://github.com/fmoren05/Term-Project/assets/156385950/10583b70-88eb-4af6-abf7-cfdb28595a79)
+
+
+Figure 8. Final System
+
 
 # Lessons Learned & Recommendations:
 
