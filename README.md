@@ -1,4 +1,4 @@
-# Term Project
+# ME 405 Term Project, Group 14
 
 # Introduction: 
 
