@@ -106,7 +106,7 @@ The system was extensively tested using various test scenarios to evaluate its p
 ![image](https://github.com/fmoren05/Term-Project/assets/156385950/10583b70-88eb-4af6-abf7-cfdb28595a79)
 
 
-Figure 8. Final System
+Figure 8: Final system design.
 
 
 # Lessons Learned & Recommendations:
