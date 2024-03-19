@@ -38,7 +38,7 @@ Figure 2: Firing sequence schematic of system. Note that the servo trigger will 
 
 
 # Software Design:
-![image](https://github.com/fmoren05/Term-Project/assets/156385954/c22d6125-a10a-43e0-afb8-f808ff7e85f9)
+![image](https://github.com/fmoren05/Term-Project/assets/156385954/47345f5e-ff6a-48bf-90e8-84db1d92e567)
 Figure 3. Low-side mosfet switch used for flywheel motors. 
 
 ![image](https://github.com/fmoren05/Term-Project/assets/156385954/1772b2a8-6f60-4d94-9b0b-320cfb8660c2)
