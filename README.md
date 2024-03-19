@@ -49,7 +49,9 @@ Several key insights were gained during the turret battle session. We didn’t a
 
 # Additonal Links:
 CAD: https://github.com/fmoren05/Term-Project/tree/main/cad
+
 DOXYGEN: https://github.com/fmoren05/Term-Project/tree/main/docs
+
 SRC: https://github.com/fmoren05/Term-Project/tree/main/src
 
 
