@@ -1,4 +1,4 @@
-"""
+"""!
 Servo Driver Class
 
 This script defines a class `ServoDriver` for controlling servo motors using MicroPython on a Pyboard. The class allows setting the position of the servo motor using PWM signals.
@@ -11,7 +11,7 @@ The script also includes a test code block to demonstrate the usage of the `Serv
 Author: Conor Schott, Fermin Moreno, Berent Baysal
 
 Date: 3/14/2024
-!"""
+"""
 
 import micropython
 import time
@@ -21,14 +21,14 @@ import pyb
 
 class ServoDriver:
     def __init__ (self, servo_pin, timer, timer_channel ):
-        """
+        """!
         Initializes the ServoDriver object.
 
         Args:
             servo_pin (str): The pin connected to the servo motor.
             timer (int): The timer number to use for PWM.
             timer_channel (int): The channel of the timer to use for PWM.
-        !"""
+        """
         servo_pin = getattr(pyb.Pin.board, servo_pin) # Get the pin value for the pin stored in servo_pin
         
         # Initialize the pin as an output pin
@@ -42,12 +42,12 @@ class ServoDriver:
         self.timer_channel=t.channel(timer_channel, pyb.Timer.PWM, pin=self.servo_pin) 
 
     def set_pos(self, angle):
-        """
+        """!
         Sets the position of the servo motor.
 
         Args:
             angle (int): The desired angle of the servo motor.
-        !"""
+        """
         # Convert angle in degrees to the PWM needed for the servo controller
         PWM_angle = (angle / 180) * 2000 + 500   # 500 microseconds is 0 degrees, 2500 is 180 degrees
         PWM_angle = int(PWM_angle)
