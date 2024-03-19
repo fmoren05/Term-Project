@@ -52,6 +52,12 @@ Figure 2: Firing sequence schematic of system. Note that the servo trigger will 
 
 # Software Design:
 
+Our software was written using Micropython via Thonny. The software consisted of files pertaining to motor controll, PID control, MLX to encoder processing, servo triggering, flywheel activation, and cotasking. 
+
+Software Link: https://github.com/fmoren05/Term-Project/tree/main/src
+
+# Electronic Design: 
+
 ![image](https://github.com/fmoren05/Term-Project/assets/156385954/c50f1105-7ef4-47a1-808b-d7fd96c1f143)
 
 Figure 3: Overall Circuit Diagram of System.
