@@ -81,6 +81,7 @@ Figure 5: 12V to 6V voltage regulator used for servo trigger motor.
 Figure 6: Firing sequence state diagram.
 
 
+![Flywheel_Motors_State_Diagram drawio](https://github.com/fmoren05/Term-Project/assets/156385950/4ea4958a-5ad5-4e95-94c0-718d582fd607)
 
 Figure 7: Flywheel motor state diagram.
 
