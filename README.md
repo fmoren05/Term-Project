@@ -58,6 +58,8 @@ Software Link: https://github.com/fmoren05/Term-Project/tree/main/src
 
 # Electronic Design: 
 
+Our electronic design is displayed below along with depictions of the special circuitry used. Special circuitry included a 12V to 6V voltage regulator as well as a low side MOSFET switch. The panning axis motor used was the one provided for the lab, so it was connected as instructed. We decided to use the B channel pins for the encoder, so we used PC1 for the EN_B, PA0 for IN1_B, and PA1 for IN2_B. The motor voltage wires were also hooked up to the positive and negative B terminals on the motor driver. The motor driver itself was powered by the voltage supply set to 12V with a current limit of 0.5A. The MLX camera was powered by the 3v3 supply and it utilized the SDA and SCL pins on the shoe. Our servo motor utilized the 6V output from the voltage regulator, and it was connected to Pin B6 ont the microconroller. The MOSFET switch utilized Pin C0, and it would regualte between high and low in order to allow for the passing of current to the flywheel motors.
+
 ![image](https://github.com/fmoren05/Term-Project/assets/156385954/c50f1105-7ef4-47a1-808b-d7fd96c1f143)
 
 Figure 3: Overall Circuit Diagram of System.
@@ -65,12 +67,21 @@ Figure 3: Overall Circuit Diagram of System.
 ![image](https://github.com/fmoren05/Term-Project/assets/156385954/2e7ecd68-8abd-45ad-a0a7-47c0372085f3)
 
 
-Figure 4: Low-side mosfet switch used for flywheel motors. 
+Figure 4: Low-side MOSFET switch used for flywheel motors diagram. 
 
 ![image](https://github.com/fmoren05/Term-Project/assets/156385954/1772b2a8-6f60-4d94-9b0b-320cfb8660c2)
 
+Figure 5: Circuit image of MOSFET switch
 
-Figure 5: 12V to 6V voltage regulator used for servo trigger motor. 
+![image](https://github.com/fmoren05/Term-Project/assets/156385950/1119cf7a-1b49-49d4-b11a-c1ffc9c627db)
+
+
+Figure 6: 12V to 6V voltage regulator used for servo trigger motor diagram. 
+
+![image](https://github.com/fmoren05/Term-Project/assets/156385950/abb3c800-195e-4659-8604-1710b4cc8944)
+
+
+Figure 7: Circuit image of voltage regulator
 
 # State Diagrams of System
 
