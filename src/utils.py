@@ -1,7 +1,9 @@
 """!
+@file utils.py
+
 Struct and Field Description Utilities
 
-This script provides utilities for working with structured data and defining field descriptions. It includes functions for creating arrays filled with a specified value, calculating two's complement, and creating field descriptions.
+@brief This script provides utilities for working with structured data and defining field descriptions. It includes functions for creating arrays filled with a specified value, calculating two's complement, and creating field descriptions.
 
 The `array_filled` function creates an array of a specified type and length, optionally filled with a specified value.
 
