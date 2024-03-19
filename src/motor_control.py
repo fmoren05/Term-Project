@@ -1,4 +1,4 @@
-"""
+"""!
 @file motor_control.py
 @brief Defines a MotorDriver class for controlling motors in an ME405 kit.
 
@@ -18,23 +18,23 @@ Date: 2/22/24
 @dependencies
 Dependencies:
 - pyb
-!"""
+"""
 
 from pyb import *
 
 class MotorDriver:
-    """
+    """!
     This class implements a motor driver for an ME405 kit.
-    !"""
+    """
 
     def __init__ (self, en_pin, in1pin, in2pin, timer):
-        """
+        """!
         Creates a motor driver by initializing GPIO pins and turning off the motor for safety.
         @param en_pin: Pin for motor enable
         @param in1pin: Pin for IN1
         @param in2pin: Pin for IN2
         @param timer: Timer for PWM
-        !"""
+        """
         self.en_pin = Pin(en_pin, Pin.OUT_OD, Pin.PULL_UP)
         self.in1 = Pin(in1pin, Pin.OUT_PP)
         self.in2 = Pin(in2pin, Pin.OUT_PP)
@@ -46,11 +46,11 @@ class MotorDriver:
         #print("Creating a motor driver")
 
     def set_duty_cycle (self, level):
-        """
+        """!
         Sets the duty cycle to be sent to the motor to the given level.
         Positive values cause torque in one direction, negative values in the opposite direction.
         @param level: A signed integer holding the duty cycle of the voltage sent to the motor
-        !"""
+        """
         
         
         if level < 0:
