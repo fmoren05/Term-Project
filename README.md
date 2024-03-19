@@ -50,23 +50,23 @@ Figure 2: Firing sequence schematic of system. Note that the servo trigger will 
 
 ![image](https://github.com/fmoren05/Term-Project/assets/156385954/c50f1105-7ef4-47a1-808b-d7fd96c1f143)
 
-Figure 3: Overall Circuit Diagram of System
+Figure 3: Overall Circuit Diagram of System.
 
 ![image](https://github.com/fmoren05/Term-Project/assets/156385954/2e7ecd68-8abd-45ad-a0a7-47c0372085f3)
 
 
-Figure 3: Low-side mosfet switch used for flywheel motors. 
+Figure 4: Low-side mosfet switch used for flywheel motors. 
 
 ![image](https://github.com/fmoren05/Term-Project/assets/156385954/1772b2a8-6f60-4d94-9b0b-320cfb8660c2)
 
 
-Figure 4: 12V to 6V voltage regulator used for servo trigger motor. 
+Figure 5: 12V to 6V voltage regulator used for servo trigger motor. 
 
 # State Diagrams of System
 
-Figure 5: Firing sequence state diagram.
+Figure 6: Firing sequence state diagram.
 
-Figure 6: Flywheel motor state diagram.
+Figure 7: Flywheel motor state diagram.
 
 # Discussion of Results:
 
