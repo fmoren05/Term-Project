@@ -5,7 +5,7 @@ The script also utilizes shared variables and a queue for inter-task communicati
 
 @file main.py
 @author Conor Schott, Fermin Moreno, Berent Baysal
-"""
+!"""
 
 import gc  # Importing garbage collector for memory management
 import pyb  # Importing pyb for board-specific functionality
@@ -28,7 +28,7 @@ def firing_sequence_fun():
     """
     Task function for Firing Sequence.
     Implements closed-loop control of a motor based on encoder feedback.
-    """
+    !"""
     # ENCODER AND MOTOR SETUP----------------------------------------------------------
     enc = encoder_reader.Encoder(8, pyb.Pin.board.PC6, pyb.Pin.board.PC7)
     moe = motor_control.MotorDriver(pyb.Pin.board.PC1, pyb.Pin.board.PA0, pyb.Pin.board.PA1, 5)
@@ -124,7 +124,7 @@ def flywheel_motors_fun():
     """
     Task function for Flywheel Motors.
     Implements closed-loop control of another motor based on encoder feedback.
-    """
+    !"""
     pinC0 = pyb.Pin(pyb.Pin.board.Pc0, pyb.Pin.OUT_PP)
 
     while True:
