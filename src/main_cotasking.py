@@ -11,18 +11,17 @@ import gc  # Importing garbage collector for memory management
 import pyb  # Importing pyb for board-specific functionality
 import utime  # Importing utime for microsecond-level timing
 import cotask  # Importing cotask for cooperative multitasking
-import encoder_reader
 import task_share
 import motor_control
+import encoder_reader
 import PID_Closed_Loop
-import Progress1
+import image_to_encoder
+import servo_trigger
+import Flywheel
 from machine import Pin, I2C
 from mlx90640 import MLX90640
 from mlx90640.calibration import NUM_ROWS, NUM_COLS, TEMP_K
 from mlx90640.image import ChessPattern, InterleavedPattern
-import servo_motor
-import Flywheel_ON_OFF_TestRun
-
 #---------------------------------------------------------------------------------
 
 def firing_sequence_fun():
