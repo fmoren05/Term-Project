@@ -1,5 +1,6 @@
 """!
 Script Name: image_to_encoder.py
+Formerly: mlx_cam.py
 Description: This script defines a class to interface with an MLX90640 thermal infrared camera for image capture and analysis.
 
 Author: Dr. Ridgely
