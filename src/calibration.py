@@ -1,4 +1,4 @@
-"""
+"""!
 @file __init__.py
 @brief Controls the MLX90640 thermal infrared camera.
 
@@ -14,7 +14,7 @@ Modifed by: Conor Schott, Fermin Moreno, Berent Baysal
 @date
 Date: 3/14/2024
 
-!"""
+"""
 
 from array import array
 from mlx90640.utils import (
@@ -42,7 +42,7 @@ CC_PROTO = StructProto((
 ))
 
 def _read_cc_iter(iface, base, size):
-    """
+    """!
     Read the compensation coefficients from the given base address.
 
     @param iface: The camera interface.
@@ -52,7 +52,7 @@ def _read_cc_iter(iface, base, size):
     @param size: The size of the coefficients.
     @type size: int
     @return: An iterator over the compensation coefficients.
-    !"""
+    """
     buf = bytearray(REG_SIZE)
     struct = Struct(buf, CC_PROTO)
     for addr_off in range(size // 4):
@@ -64,43 +64,43 @@ def _read_cc_iter(iface, base, size):
         yield struct['3']
 
 def read_occ_rows(iface):
-    """
+    """!
     Read the occupied rows from the camera.
 
     @param iface: The camera interface.
     @type iface: object
     @return: An iterator over the occupied rows.
-    !"""
+    """
     return _read_cc_iter(iface, OCC_ROWS_ADDRESS, NUM_ROWS)
 
 def read_occ_cols(iface):
-    """
+    """!
     Read the occupied columns from the camera.
 
     @param iface: The camera interface.
     @type iface: object
     @return: An iterator over the occupied columns.
-    !"""
+    """
     return _read_cc_iter(iface, OCC_COLS_ADDRESS, NUM_COLS)
 
 def read_acc_rows(iface):
-    """
+    """!
     Read the accumulated rows from the camera.
 
     @param iface: The camera interface.
     @type iface: object
     @return: An iterator over the accumulated rows.
-    !"""
+    """
     return _read_cc_iter(iface, ACC_ROWS_ADDRESS, NUM_ROWS)
 
 def read_acc_cols(iface):
-    """
+    """!
     Read the accumulated columns from the camera.
 
     @param iface: The camera interface.
     @type iface: object
     @return: An iterator over the accumulated columns.
-    !"""
+    """
     return _read_cc_iter(iface, ACC_COLS_ADDRESS, NUM_COLS)
 
 PIX_CALIB_PROTO = StructProto((
@@ -114,17 +114,17 @@ PIX_CALIB_ADDRESS = const(0x2440)
 
 
 class PixelCalibrationData:
-    """
+    """!
     Class representing pixel calibration data.
-    !"""
+    """
 
     def __init__(self, iface):
-        """
+        """!
         Initialize the pixel calibration data.
 
         @param iface: The camera interface.
         @type iface: object
-        !"""
+        """
         pix_count = NUM_ROWS * NUM_COLS
         self._data = bytearray(pix_count * REG_SIZE)
 
@@ -153,12 +153,12 @@ class PixelCalibrationData:
 TEMP_K = 273.15
 
 class CameraCalibration:
-    """
+    """!
     Class representing camera calibration.
-    !"""
+    """
 
     def __init__(self, iface, eeprom, *, emissivity=1, use_tgc=False):
-        """
+        """!
         Initialize the camera calibration.
 
         @param iface: The camera interface.
@@ -169,7 +169,7 @@ class CameraCalibration:
         @type emissivity: float
         @param use_tgc: Flag indicating whether TGC (temperature gradient compensation) should be used.
         @type use_tgc: bool
-        !"""
+        """
         self.emissivity = emissivity
 
         # restore VDD sensor parameters
@@ -261,7 +261,7 @@ class CameraCalibration:
         self.alpha_ext = (alpha_1, alpha_2, alpha_3, alpha_4)
 
     def _calc_pix_os_ref(self, iface, eeprom):
-        """
+        """!
         Calculate the offset reference for pixel calibration.
 
         @param iface: The camera interface.
@@ -269,7 +269,7 @@ class CameraCalibration:
         @param eeprom: The EEPROM data.
         @type eeprom: dict
         @return: An iterator over the calculated offset reference.
-        !"""
+        """
         offset_avg = eeprom['pix_os_average']
         occ_scale_row = 1 << eeprom['scale_occ_row']
         occ_scale_col = 1 << eeprom['scale_occ_col']
@@ -289,7 +289,7 @@ class CameraCalibration:
                 )
 
     def _calc_pix_alpha_ref(self, iface, eeprom):
-        """
+        """!
         Calculate the alpha reference for pixel calibration.
 
         @param iface: The camera interface.
@@ -297,7 +297,7 @@ class CameraCalibration:
         @param eeprom: The EEPROM data.
         @type eeprom: dict
         @return: An iterator over the calculated alpha reference.
-        !"""
+        """
         alpha_ref = eeprom['pix_sensitivity_average']
         alpha_scale = 1 << (eeprom['alpha_scale'] + 30)
         acc_scale_row = 1 << eeprom['scale_acc_row']
@@ -318,13 +318,13 @@ class CameraCalibration:
                 ) / alpha_scale
 
     def _calc_pix_kta(self, eeprom):
-        """
+        """!
         Calculate the KTA for pixel calibration.
 
         @param eeprom: The EEPROM data.
         @type eeprom: dict
         @return: An iterator over the calculated KTA.
-        !"""
+        """
         # index by [row % 2][col % 2]
         kta_avg = (
             (eeprom['kta_avg_re_ce'], eeprom['kta_avg_re_co']),
@@ -339,11 +339,11 @@ class CameraCalibration:
                 yield (kta_rc + kta_ee * self.kta_scale_2)/self.kta_scale_1
 
     def _calc_il_offset(self):
-        """
+        """!
         Calculate the interleaved offset.
 
         @return: An iterator over the calculated interleaved offset.
-        !"""
+        """
         for idx in range(NUM_ROWS*NUM_COLS):
             il_pattern = idx//32 - (idx//64)*2
             conv_pattern = (
