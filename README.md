@@ -5,7 +5,7 @@ Our turret design for the ME 405 term project features a dynamic combination of 
 
 # Hardware Design: 
 
-NOTE: All CAD Is Available IN CAD Folder: 
+NOTE: All CAD Is Available IN CAD Folder: https://github.com/fmoren05/Term-Project/tree/main/cad
 
 
 KEY COMPONENTS
