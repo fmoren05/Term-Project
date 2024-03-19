@@ -1,4 +1,4 @@
-"""
+"""!
 @file encoder_reader.py
 @brief Implements an encoder reader using Pyboard's Timer and Pin modules.
 
@@ -11,18 +11,18 @@ Authors: Conor Schott, Fermin Moreno, Berent Baysal
 @date
 Date: 16th February 2024
 
-!"""
+"""
 
 from pyb import Timer, Pin
 import time
 
 class Encoder:
-    """
+    """!
     Class representing an encoder reader.
-    !"""
+    """
 
     def __init__(self, timer, enc_pin_A, enc_pin_B):
-        """
+        """!
         Initialize the encoder reader.
 
         @param timer: Timer for encoder counting.
@@ -31,7 +31,7 @@ class Encoder:
         @type enc_pin_A: pyb.Pin
         @param enc_pin_B: Encoder channel B pin.
         @type enc_pin_B: pyb.Pin
-        !"""
+        """
         self.timer = Timer(timer, prescaler=0, period=0xFFFF)
         self.enc_chA = self.timer.channel(1, Timer.ENC_AB, pin=enc_pin_A)
         self.enc_chB = self.timer.channel(2, Timer.ENC_AB, pin=enc_pin_B)
@@ -39,12 +39,12 @@ class Encoder:
         self.prev_value = self.timer.counter()
         
     def read(self):
-        """
+        """!
         Read the encoder values.
 
         @return: Tuple containing the current encoder count, delta, and channel A and B values.
         @rtype: int
-        !"""
+        """
         delta = self.timer.counter() - self.prev_value
         if delta > 32767:
             delta -= 65536
@@ -55,9 +55,9 @@ class Encoder:
         return self.cur_value
 
     def zero(self):
-        """
+        """!
         Set the count to zero at the current position for both encoders.
-        !"""
+        """
         self.cur_value = 0
 
 if __name__ == '__main__':
