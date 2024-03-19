@@ -1,4 +1,4 @@
-"""
+"""!
 MLX90640 register mapping
 
 This script defines the register mapping for the MLX90640 thermal infrared camera. It includes definitions for various registers and their corresponding fields, along with methods for reading from and writing to these registers. Additionally, it provides a class `CameraInterface` for interfacing with the hardware, and a class `RegisterMap` for accessing and manipulating the camera's registers.
@@ -13,7 +13,7 @@ Author:
 Dr. Ridgely
 
 Modifed by: Conor Schott, Fermin Moreno, Berent Baysal
-!"""
+"""
 
 from mlx90640.utils import (
     field_desc,
