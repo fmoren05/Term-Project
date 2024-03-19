@@ -4,7 +4,7 @@
 
 Goal: The final turret design will be used to compete in 1v1 battles (called dueling) with other groups to determine who can hit their target first over the span of 5 rounds. 
 
-Customer: ME 405 Instructor
+Customer: ME 405 Instructor (Dr. Ridgely)
 
 
 Brief Overview: 
