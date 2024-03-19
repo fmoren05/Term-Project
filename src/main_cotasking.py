@@ -36,7 +36,7 @@ def firing_sequence_fun():
     # ENCODER AND MOTOR SETUP----------------------------------------------------------
     enc = encoder_reader.Encoder(8, pyb.Pin.board.PC6, pyb.Pin.board.PC7)
     moe = motor_control.MotorDriver(pyb.Pin.board.PC1, pyb.Pin.board.PA0, pyb.Pin.board.PA1, 5)
-    servo1 = servo_motor.ServoDriver('PB6',4,1)
+    servo1 = servo_trigger.ServoDriver('PB6',4,1)
 
     # CAMERA SETUP---------------------------------------------------------------------
 
@@ -130,7 +130,7 @@ def flywheel_motors_fun():
     Activates the low- side MOSFET switch for a set time limit.
     """
     pinC0 = pyb.Pin(pyb.Pin.board.Pc0, pyb.Pin.OUT_PP)
-
+    
     while True:
         pinC0.value(1)
         utime.sleep_ms(10000)
