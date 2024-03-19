@@ -85,6 +85,8 @@ Figure 7: Circuit image of voltage regulator
 
 # State Diagrams of System
 
+The state diagrams below illustrate what is going on with our main_cotasking.py file. Figure 6 shows the sequence of states that the firing sequence task undergoes as it runs simultaneously with the
+flywheel motor task depicted in Figure 7.
 
 ![Firing_Secuence_State_Diagram](https://github.com/fmoren05/Term-Project/assets/156385950/790e4b55-d850-4f88-a7ff-82202f48e91a)
 
