@@ -1,5 +1,7 @@
 """!
-Servo Driver Class
+@file servo_trigger.py
+
+@brief Servo Driver Class
 
 This script defines a class `ServoDriver` for controlling servo motors using MicroPython on a Pyboard. The class allows setting the position of the servo motor using PWM signals.
 
