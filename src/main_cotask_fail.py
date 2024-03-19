@@ -1,5 +1,7 @@
 """!
-This script implements tasks for initializing hardware components, finding hotspots using a camera, and 
+@file main_cotask_fail.py
+
+@brief This script implements tasks for initializing hardware components, finding hotspots using a camera, and 
 controlling a motor using PID control. This was intended to be all done using Cotask. Unfortunately, the program
 was never able to fully function, but the intent was there.
 """
