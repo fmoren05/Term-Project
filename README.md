@@ -5,6 +5,9 @@ Our turret design for the ME 405 term project features a dynamic combination of 
 
 # Hardware Design: 
 
+NOTE: All CAD Is Available IN CAD Folder: 
+
+
 KEY COMPONENTS
 
 Microcontroller: STM32L476RG Nucelo (From Lab, Quantity: 1)
@@ -32,7 +35,6 @@ Figure 1: General CAD overview of system. Note that there is a horizontal pannin
 ![servo](https://github.com/fmoren05/Term-Project/assets/156385954/ded17ace-ae5a-4ab5-a130-a17aa628b9eb)
 
 Figure 2: Firing sequence schematic of system. Note that the servo trigger will push the nerf bullet into the flywheels.
-
 
 
 # Software Design:
