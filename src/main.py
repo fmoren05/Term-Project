@@ -1,3 +1,11 @@
+"""!
+@brief This script demonstrates cooperative multitasking using Cotask on a microcontroller.
+Tasks 1 and 2 perform closed-loop control of motors based on encoder feedback.
+The script also utilizes shared variables and a queue for inter-task communication.
+
+@file main.py
+@author Conor Schott, Fermin Moreno, Berent Baysal
+"""
 import utime
 import pyb
 import encoder_reader
