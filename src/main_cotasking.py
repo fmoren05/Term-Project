@@ -1,4 +1,6 @@
 """!
+@file main_cotasking.py
+
 @brief This script demonstrates cooperative multitasking using Cotask on a microcontroller.
 Task 1 performs closed-loop control of the panning axis brushed DC motor based on camera feedback.
 The camera outputs a hotspot coordinate which is then translated to encoder counts and used as the setpoint 
@@ -7,7 +9,7 @@ placing a Nerf bullet into the path of the flywheels.
 
 Task 2 controls the low-side MOSFET switch that is responsible for sending current to our flywheel motors.
 
-@file main.py
+
 @author Conor Schott, Fermin Moreno, Berent Baysal
 """
 
