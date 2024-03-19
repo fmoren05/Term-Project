@@ -1,14 +1,17 @@
-"""
+"""!
 Script Name: image_to_encoder.py
 Description: This script defines a class to interface with an MLX90640 thermal infrared camera for image capture and analysis.
-Author: Conor Schott, Fermin Moreno, Berent Baysal
+
+Author: Dr. Ridgley
+
+Modified by: Conor Schott, Fermin Moreno, Berent Baysal
 Date: 3/14/2024
 
 Dependencies:
 - utime
 - machine
 - mlx90640
-!"""
+"""
 
 import utime as time
 from machine import Pin, I2C
