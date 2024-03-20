@@ -71,12 +71,12 @@ Figure 4: Low-side MOSFET switch used for flywheel motors diagram.
 
 ![image](https://github.com/fmoren05/Term-Project/assets/156385954/1772b2a8-6f60-4d94-9b0b-320cfb8660c2)
 
-Figure 5: Circuit image of MOSFET switch
+Figure 5: 12V to 6V voltage regulator used for servo trigger motor diagram. Circuit image of MOSFET switch
 
 ![image](https://github.com/fmoren05/Term-Project/assets/156385950/1119cf7a-1b49-49d4-b11a-c1ffc9c627db)
 
 
-Figure 6: 12V to 6V voltage regulator used for servo trigger motor diagram. 
+Figure 6: Circuit image of MOSFET switch
 
 ![image](https://github.com/fmoren05/Term-Project/assets/156385950/abb3c800-195e-4659-8604-1710b4cc8944)
 
