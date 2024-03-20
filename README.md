@@ -54,7 +54,7 @@ Figure 2: Firing sequence schematic of system. Note that the servo trigger will 
 
 Our software was written using Micropython via Thonny. The software consisted of files pertaining to motor control, PID control, MLX to encoder processing, servo triggering, flywheel activation, and cotasking via main. There are multiple main files for our project to demonstrate our progress throughout. Our first main did not implement cotasking, whereas our cotasking main did. Our final attempt at improving our working cotasking main failed cotasking due to running into unforseen debugging issues by the time of dueling. The regular main without cotasking and the cotasking main both work. As a result, we have all three mains available for the user to look at in case they want to recreate our turret.
 
-Software Link: https://github.com/fmoren05/Term-Project/tree/main/src
+Software Link: https://fmoren05.github.io/Term-Project/
 
 # Electronic Design: 
 
@@ -116,7 +116,7 @@ Several key insights were gained during the turret battle session. We didn’t a
 # Additonal Links:
 ### CAD: https://github.com/fmoren05/Term-Project/tree/main/cad
 
-### DOXYGEN: https://github.com/fmoren05/Term-Project/tree/main/docs
+### DOXYGEN: https://fmoren05.github.io/Term-Project/
 
 ### SRC: https://github.com/fmoren05/Term-Project/tree/main/src
 
