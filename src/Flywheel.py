@@ -1,5 +1,5 @@
 """!
-@file Flywheel.py
+@file flywheel.py
 @brief Implements functions for controlling a flywheel.
 
 @details
