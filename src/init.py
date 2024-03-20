@@ -1,5 +1,5 @@
 """!
-@file __init__.py
+@file init.py
 @brief Controls the MLX90640 thermal infrared camera.
 
 @details
